@@ -156,10 +156,7 @@ This ensures every build validates scaffold presence and correctness.
 ---
 
 ## 👤 Author
-Created by **Pawan**  
-Senior Architect & Prompt Engineer specializing in enterprise SaaS automation.
-
----
-```
+Created by **Pawan Rahate**  
+Aspiring Senior Full-Stack Lead & Prompt Engineer specializing in enterprise SaaS automation.
 
 ---

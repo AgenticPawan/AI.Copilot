@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="build\AI.Copilot.Scaffolding.targets" Pack="true" PackagePath="build\" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PackageId>AI.Copilot.Scaffolding</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Pawan Rahate</Authors>
+    <Company>AI.Copilot</Company>
+    <Description>Production-ready scaffold for Copilot workspace layers.</Description>
+    <PackageTags>copilot scaffolding ai workspace</PackageTags>
+    <RepositoryUrl>https://github.com/AgenticPawan/AI.Copilot</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>

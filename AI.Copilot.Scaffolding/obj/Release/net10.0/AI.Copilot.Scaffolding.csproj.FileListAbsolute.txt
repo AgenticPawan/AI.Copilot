@@ -1,0 +1,11 @@
+E:\GITHUB\AI.Copilot\AI.Copilot.Scaffolding\bin\Release\net10.0\AI.Copilot.Scaffolding.deps.json
+E:\GITHUB\AI.Copilot\AI.Copilot.Scaffolding\bin\Release\net10.0\AI.Copilot.Scaffolding.dll
+E:\GITHUB\AI.Copilot\AI.Copilot.Scaffolding\bin\Release\net10.0\AI.Copilot.Scaffolding.pdb
+E:\GITHUB\AI.Copilot\AI.Copilot.Scaffolding\obj\Release\net10.0\AI.Copilot.Scaffolding.GeneratedMSBuildEditorConfig.editorconfig
+E:\GITHUB\AI.Copilot\AI.Copilot.Scaffolding\obj\Release\net10.0\AI.Copilot.Scaffolding.AssemblyInfoInputs.cache
+E:\GITHUB\AI.Copilot\AI.Copilot.Scaffolding\obj\Release\net10.0\AI.Copilot.Scaffolding.AssemblyInfo.cs
+E:\GITHUB\AI.Copilot\AI.Copilot.Scaffolding\obj\Release\net10.0\AI.Copilot.Scaffolding.csproj.CoreCompileInputs.cache
+E:\GITHUB\AI.Copilot\AI.Copilot.Scaffolding\obj\Release\net10.0\AI.Copilot.Scaffolding.dll
+E:\GITHUB\AI.Copilot\AI.Copilot.Scaffolding\obj\Release\net10.0\refint\AI.Copilot.Scaffolding.dll
+E:\GITHUB\AI.Copilot\AI.Copilot.Scaffolding\obj\Release\net10.0\AI.Copilot.Scaffolding.pdb
+E:\GITHUB\AI.Copilot\AI.Copilot.Scaffolding\obj\Release\net10.0\ref\AI.Copilot.Scaffolding.dll

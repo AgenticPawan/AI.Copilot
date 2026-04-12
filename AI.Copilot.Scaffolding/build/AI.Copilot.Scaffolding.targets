@@ -1,0 +1,138 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <!-- Ensure scaffold directories exist -->
+    <Target Name="EnsureScaffoldDirectories" BeforeTargets="Build">
+        <MakeDir Directories="$(MSBuildProjectDirectory)\.copilot-chat\01-behaviour-layer" />
+        <MakeDir Directories="$(MSBuildProjectDirectory)\.copilot-chat\02-task-layer" />
+        <MakeDir Directories="$(MSBuildProjectDirectory)\.copilot-chat\03-persona-layer" />
+        <MakeDir Directories="$(MSBuildProjectDirectory)\.copilot-chat\04-workflow-layer" />
+        <MakeDir Directories="$(MSBuildProjectDirectory)\.github\agents" />
+        <MakeDir Directories="$(MSBuildProjectDirectory)\.github\instructions" />
+        <MakeDir Directories="$(MSBuildProjectDirectory)\.github\prompts" />
+        <MakeDir Directories="$(MSBuildProjectDirectory)\.vscode" />
+    </Target>
+
+    <!-- Auto-generate scaffold files with default content -->
+    <Target Name="GenerateScaffoldFiles" DependsOnTargets="EnsureScaffoldDirectories"
+        BeforeTargets="Build">
+
+        <!-- Behaviour Layer -->
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.copilot-chat\01-behaviour-layer\coding-standards.md"
+            Lines="## Coding Standards`nDefines project-wide coding rules and conventions."
+            Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.copilot-chat\01-behaviour-layer\system-prompt.md"
+            Lines="## System Prompt`nDefines Copilot system behavior and constraints."
+            Overwrite="false" />
+
+        <!-- Task Layer -->
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.copilot-chat\02-task-layer\api-integration.md"
+            Lines="## API Integration`nGuidelines for connecting external APIs." Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.copilot-chat\02-task-layer\backend-feature.md"
+            Lines="## Backend Feature`nSteps for implementing backend features." Overwrite="false" />
+
+        <WriteLinesToFile File="$(MSBuildProjectDirectory)\.copilot-chat\02-task-layer\bug-fix.md"
+            Lines="## Bug Fix`nChecklist for fixing and validating bugs." Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.copilot-chat\02-task-layer\frontend-feature.md"
+            Lines="## Frontend Feature`nGuidelines for UI/UX feature development." Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.copilot-chat\02-task-layer\unit-testing.md"
+            Lines="## Unit Testing`nStandards for writing and executing unit tests."
+            Overwrite="false" />
+
+        <!-- Persona Layer -->
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.copilot-chat\03-persona-layer\personas.md"
+            Lines="## Personas`nDefines AI personas and roles." Overwrite="false" />
+
+        <!-- Workflow Layer -->
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.copilot-chat\04-workflow-layer\workflows.md"
+            Lines="## Workflows`nAutomation workflows for Copilot." Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.copilot-chat\04-workflow-layer\QUICK_START.md"
+            Lines="## Quick Start`nSteps to onboard quickly." Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.copilot-chat\04-workflow-layer\README.md"
+            Lines="## README`nOverview of Copilot workspace layers." Overwrite="false" />
+
+        <!-- GitHub Agents -->
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.github\agents\backend-architect.agent.md"
+            Lines="## Backend Architect Agent`nResponsibilities and tasks." Overwrite="false" />
+
+        <WriteLinesToFile File="$(MSBuildProjectDirectory)\.github\agents\devops-engineer.agent.md"
+            Lines="## DevOps Engineer Agent`nCI/CD and infrastructure automation." Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.github\agents\frontend-engineer.agent.md"
+            Lines="## Frontend Engineer Agent`nUI/UX implementation." Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.github\agents\fullstack-architect.agent.md"
+            Lines="## Fullstack Architect Agent`nCross-layer design and integration."
+            Overwrite="false" />
+
+        <WriteLinesToFile File="$(MSBuildProjectDirectory)\.github\agents\qa-engineer.agent.md"
+            Lines="## QA Engineer Agent`nTesting and quality assurance." Overwrite="false" />
+
+        <!-- GitHub Instructions -->
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.github\instructions\backend.instructions.md"
+            Lines="## Backend Instructions`nBackend coding and deployment standards."
+            Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.github\instructions\common.instructions.md"
+            Lines="## Common Instructions`nShared coding and workflow rules." Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.github\instructions\frontend.instructions.md"
+            Lines="## Frontend Instructions`nUI/UX coding standards." Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.github\instructions\multi-tenancy.instructions.md"
+            Lines="## Multi-Tenancy Instructions`nGuidelines for tenant-aware features."
+            Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.github\instructions\security.instructions.md"
+            Lines="## Security Instructions`nBest practices for secure coding." Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.github\instructions\testing.instructions.md"
+            Lines="## Testing Instructions`nStandards for automated and manual testing."
+            Overwrite="false" />
+
+        <!-- GitHub Prompts -->
+        <WriteLinesToFile File="$(MSBuildProjectDirectory)\.github\prompts\copilot-instructions.md"
+            Lines="## Copilot Instructions`nDefines Copilot usage and prompts." Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.github\prompts\workflows\COPILOT_QUICK_START.md"
+            Lines="## Copilot Quick Start Workflow`nSteps to bootstrap Copilot." Overwrite="false" />
+
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.github\prompts\skills\backend-architect\SKILL.md"
+            Lines="## Backend Architect Skill`nDefines backend skill prompts." Overwrite="false" />
+
+        <!-- VSCode Config -->
+        <WriteLinesToFile File="$(MSBuildProjectDirectory)\.vscode\mcp.json"
+            Lines="{`n  &quot;version&quot;: &quot;1.0&quot;,`n  &quot;description&quot;: &quot;MCP workspace config&quot;`n}"
+            Overwrite="false" />
+
+        <WriteLinesToFile File="$(MSBuildProjectDirectory)\.vscode\settings.json"
+            Lines="{`n  &quot;editor.formatOnSave&quot;: true`n}" Overwrite="false" />
+    </Target>
+
+</Project>

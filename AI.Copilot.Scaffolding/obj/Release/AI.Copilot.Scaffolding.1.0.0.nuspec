@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>AI.Copilot.Scaffolding</id>
+    <version>1.0.0</version>
+    <authors>Pawan Rahate</authors>
+    <description>Production-ready scaffold for Copilot workspace layers.</description>
+    <tags>copilot scaffolding ai workspace</tags>
+    <repository type="git" url="https://github.com/AgenticPawan/AI.Copilot" />
+    <dependencies>
+      <group targetFramework="net10.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="E:\GITHUB\AI.Copilot\AI.Copilot.Scaffolding\bin\Release\net10.0\AI.Copilot.Scaffolding.dll" target="lib\net10.0\AI.Copilot.Scaffolding.dll" />
+    <file src="E:\GITHUB\AI.Copilot\AI.Copilot.Scaffolding\build\AI.Copilot.Scaffolding.targets" target="build\AI.Copilot.Scaffolding.targets" />
+  </files>
+</package>

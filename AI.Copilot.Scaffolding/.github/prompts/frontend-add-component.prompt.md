@@ -1,6 +1,6 @@
 ---
 mode: 'agent'
-description: "Add or modify an Angular component, service, guard, or interceptor. Use when: creating shared UI widgets, adding services, building guards, or creating directives following VirtualStudio standalone component patterns."
+description: "Add or modify an Angular component, service, guard, or interceptor. Use when: creating shared UI widgets, adding services, building guards, or creating directives following Copilot standalone component patterns."
 ---
 
 # Frontend: Add/Modify Component or Service

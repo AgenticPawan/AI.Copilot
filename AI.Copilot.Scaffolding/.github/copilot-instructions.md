@@ -1,8 +1,8 @@
-# VirtualStudio - GitHub Copilot Instructions
+# Copilot - GitHub Copilot Instructions
 
 ## Project Identity
 
-Multi-tenant SaaS platform called **VirtualStudio**. DNS-based tenant isolation with database-per-tenant strategy.
+Multi-tenant SaaS platform called **Copilot**. DNS-based tenant isolation with database-per-tenant strategy.
 
 ## Tech Stack
 
@@ -19,13 +19,13 @@ Multi-tenant SaaS platform called **VirtualStudio**. DNS-based tenant isolation 
 
 ```
 src/backend/
-  VirtualStudio.Domain/           -- Entities, Enums, Common (BaseEntity, IAuditableEntity, ISoftDelete)
-  VirtualStudio.Application/      -- Features/{Area}/Commands|Queries|Validators, DTOs, Interfaces, Common (Result<T>)
-  VirtualStudio.Infrastructure/   -- Security (JWT, AES, BCrypt), Tenancy, Services, EmailTemplates
-  VirtualStudio.Persistence/      -- Contexts (HostDbContext, TenantDbContext), Configurations, Seeders, Migrations
-  VirtualStudio.Api/              -- Controllers/{Auth|Admin|Shared|TenantModules}, Middleware, Hubs, Authorization
-  VirtualStudio.Migrator/         -- Console app for migrations & seeding
-  VirtualStudio.Tests/            -- xUnit tests (Domain/, Application/)
+  Copilot.Domain/           -- Entities, Enums, Common (BaseEntity, IAuditableEntity, ISoftDelete)
+  Copilot.Application/      -- Features/{Area}/Commands|Queries|Validators, DTOs, Interfaces, Common (Result<T>)
+  Copilot.Infrastructure/   -- Security (JWT, AES, BCrypt), Tenancy, Services, EmailTemplates
+  Copilot.Persistence/      -- Contexts (HostDbContext, TenantDbContext), Configurations, Seeders, Migrations
+  Copilot.Api/              -- Controllers/{Auth|Admin|Shared|TenantModules}, Middleware, Hubs, Authorization
+  Copilot.Migrator/         -- Console app for migrations & seeding
+  Copilot.Tests/            -- xUnit tests (Domain/, Application/)
 
 src/frontend/
   projects/portal/                -- Single SPA (host/tenant detection via subdomain)

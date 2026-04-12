@@ -12,7 +12,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.1",
+    "version": "1.1.0",
     "restore": {
       "projectUniqueName": "E:\\GITHUB\\AI.Copilot\\AI.Copilot.Scaffolding\\AI.Copilot.Scaffolding.csproj",
       "projectName": "AI.Copilot.Scaffolding",

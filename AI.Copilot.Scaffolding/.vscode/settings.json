@@ -94,7 +94,7 @@
     },
     "github.copilot.chat.agent.autoFix": true,
     "chat.mcp.serverSampling": {
-        "AI.VirtualStudio/.vscode/mcp.json: angular": {
+        "AI.Copilot/.vscode/mcp.json: angular": {
             "allowedModels": [
                 "copilot/auto",
                 "copilotcli/claude-sonnet-4.6",
@@ -110,7 +110,7 @@
                 "copilot/claude-sonnet-4.6"
             ]
         },
-        "AI.VirtualStudio/.vscode/mcp.json: dotnet": {
+        "AI.Copilot/.vscode/mcp.json: dotnet": {
             "allowedModels": [
                 "copilot/auto",
                 "copilotcli/claude-sonnet-4.6",

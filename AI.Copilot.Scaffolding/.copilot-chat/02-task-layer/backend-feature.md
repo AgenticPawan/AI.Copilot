@@ -20,7 +20,7 @@ Before writing code, clarify:
 ## 🎯 Development Workflow
 
 ### Step 1: Design the Domain Entity
-**File**: `src/backend/VirtualStudio.Domain/Entities/{FeatureName}.cs`
+**File**: `src/backend/Copilot.Domain/Entities/{FeatureName}.cs`
 
 ```csharp
 // Use factory pattern + private constructor
@@ -47,7 +47,7 @@ public class Document : BaseEntity
 
 ### Step 2: Create DTOs in Application Layer
 
-**File**: `src/backend/VirtualStudio.Application/DTOs/{FeatureName}Dto.cs`
+**File**: `src/backend/Copilot.Application/DTOs/{FeatureName}Dto.cs`
 
 ```csharp
 // Request DTO (for API input)
@@ -79,7 +79,7 @@ public class DocumentDto
 
 ### Step 3: Create Command/Query + Handlers
 
-**File**: `src/backend/VirtualStudio.Application/Features/{Feature}/Commands/{FeatureName}Commands.cs`
+**File**: `src/backend/Copilot.Application/Features/{Feature}/Commands/{FeatureName}Commands.cs`
 
 ```csharp
 // Define commands as records
@@ -127,7 +127,7 @@ public class CreateDocumentCommandHandler : IRequestHandler<CreateDocumentComman
 
 ### Step 4: Create Repository Methods
 
-**File**: `src/backend/VirtualStudio.Persistence/Repositories/{Feature}Repository.cs`
+**File**: `src/backend/Copilot.Persistence/Repositories/{Feature}Repository.cs`
 
 ```csharp
 public interface IDocumentRepository
@@ -162,7 +162,7 @@ public class DocumentRepository : IDocumentRepository
 
 ### Step 5: Register Dependencies
 
-**File**: `src/backend/VirtualStudio.Api/Program.cs`
+**File**: `src/backend/Copilot.Api/Program.cs`
 
 ```csharp
 // In dependency injection registration
@@ -173,7 +173,7 @@ builder.Services
 
 ### Step 6: Create API Endpoints
 
-**File**: `src/backend/VirtualStudio.Api/Controllers/{Feature}Controller.cs`
+**File**: `src/backend/Copilot.Api/Controllers/{Feature}Controller.cs`
 
 ```csharp
 [ApiController]
@@ -234,7 +234,7 @@ public class DocumentsController : ControllerBase
 
 ### Step 7: Create EF Core Configuration
 
-**File**: `src/backend/VirtualStudio.Persistence/Configurations/DocumentConfiguration.cs`
+**File**: `src/backend/Copilot.Persistence/Configurations/DocumentConfiguration.cs`
 
 ```csharp
 public class DocumentConfiguration : IEntityTypeConfiguration<Document>
@@ -263,7 +263,7 @@ public class DocumentConfiguration : IEntityTypeConfiguration<Document>
 
 ### Step 8: Add Unit Tests
 
-**File**: `src/backend/VirtualStudio.Tests/Features/Documents/CreateDocumentCommandHandlerTests.cs`
+**File**: `src/backend/Copilot.Tests/Features/Documents/CreateDocumentCommandHandlerTests.cs`
 
 ```csharp
 public class CreateDocumentCommandHandlerTests
@@ -317,19 +317,19 @@ cd src/backend
 
 # Add migration
 dotnet ef migrations add Add_Documents \
-    --project VirtualStudio.Persistence \
+    --project Copilot.Persistence \
     --context TenantDbContext \
     --output-dir Migrations
 
 # Or if multiple DbContexts:
 dotnet ef migrations add Add_Documents \
-    --project VirtualStudio.Persistence \
+    --project Copilot.Persistence \
     --context HostDbContext \
-    --startup-project VirtualStudio.Api \
+    --startup-project Copilot.Api \
     --output-dir Migrations/Host
 
 # Run migrations
-dotnet run --project VirtualStudio.Migrator
+dotnet run --project Copilot.Migrator
 ```
 
 ---

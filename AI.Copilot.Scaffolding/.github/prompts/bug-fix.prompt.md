@@ -5,7 +5,7 @@ description: "Systematic bug diagnosis and resolution. Use when: debugging error
 
 # Bug Fix: Diagnose & Resolve
 
-Systematic approach to finding and fixing bugs in VirtualStudio.
+Systematic approach to finding and fixing bugs in Copilot.
 
 ## Input Required
 - **Symptom**: What is happening? (error message, unexpected behavior, crash)

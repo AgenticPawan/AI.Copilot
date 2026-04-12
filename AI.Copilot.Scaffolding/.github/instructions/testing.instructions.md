@@ -1,9 +1,9 @@
 ---
-applyTo: "**/VirtualStudio.Tests/**"
-description: "Testing standards for VirtualStudio. Applies to test files. Enforces xUnit + Moq + FluentAssertions patterns, required test scenarios, and naming conventions."
+applyTo: "**/Copilot.Tests/**"
+description: "Testing standards for Copilot. Applies to test files. Enforces xUnit + Moq + FluentAssertions patterns, required test scenarios, and naming conventions."
 ---
 
-# Testing Standards — VirtualStudio
+# Testing Standards — Copilot
 
 ## Backend Unit Tests (xUnit + Moq + FluentAssertions)
 
@@ -69,7 +69,7 @@ _accountDb.Verify(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.
 
 ## Test File Locations
 ```
-VirtualStudio.Tests/Domain/        → Entity behavior tests
-VirtualStudio.Tests/Application/   → Handler and validator tests
-VirtualStudio.Tests/Infrastructure/ → Service tests
+Copilot.Tests/Domain/        → Entity behavior tests
+Copilot.Tests/Application/   → Handler and validator tests
+Copilot.Tests/Infrastructure/ → Service tests
 ```

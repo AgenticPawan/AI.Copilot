@@ -60,8 +60,8 @@ Persona: QA Engineer
 
 **Step 5: Create Domain Entity**
 ```bash
-cd src/backend/VirtualStudio.Domain/Entities
-# File: src/backend/VirtualStudio.Domain/Entities/Feature.cs
+cd src/backend/Copilot.Domain/Entities
+# File: src/backend/Copilot.Domain/Entities/Feature.cs
 
 ☐ Define entity with private constructor
 ☐ Add factory Create() method
@@ -71,7 +71,7 @@ cd src/backend/VirtualStudio.Domain/Entities
 
 **Step 6: Create Application Layer (CQRS)**
 ```bash
-cd src/backend/VirtualStudio.Application
+cd src/backend/Copilot.Application
 
 ☐ Create DTOs (Request + Response)
 ☐ Create Command/Query definitions
@@ -84,7 +84,7 @@ Use: backend-feature.md → Step 2-3
 
 **Step 7: Create Persistence Layer**
 ```bash
-cd src/backend/VirtualStudio.Persistence
+cd src/backend/Copilot.Persistence
 
 ☐ Create IRepository interface
 ☐ Implement Repository class
@@ -97,7 +97,7 @@ Use: architecture-guide.md → Persistence section
 
 **Step 8: Create API Endpoints**
 ```bash
-cd src/backend/VirtualStudio.Api/Controllers
+cd src/backend/Copilot.Api/Controllers
 
 ☐ Create Controller class
 ☐ Add GET/POST/PUT/DELETE endpoints
@@ -111,7 +111,7 @@ Persona: Backend Architect + Security Specialist
 
 **Step 9: Backend Unit Tests**
 ```bash
-cd src/backend/VirtualStudio.Tests
+cd src/backend/Copilot.Tests
 
 ☐ Test Command handler (happy path + errors)
 ☐ Test Repository methods
@@ -121,7 +121,7 @@ cd src/backend/VirtualStudio.Tests
 
 Use: unit-testing.md
 Persona: QA Engineer
-Command: dotnet test VirtualStudio.slnx
+Command: dotnet test Copilot.slnx
 ```
 
 ### Phase 3: Frontend Implementation
@@ -250,7 +250,7 @@ Persona: Debugging Expert
 **Step 3: Check Logs**
 ```bash
 # Backend logs
-tail -f logs/virtualstudio-*.txt
+tail -f logs/Copilot-*.txt
 
 # Browser console
 F12 → Console tab
@@ -334,7 +334,7 @@ npm test -- bug-name.spec.ts
 **Step 10: Regression Testing**
 ```bash
 # Run full test suite
-dotnet test VirtualStudio.slnx
+dotnet test Copilot.slnx
 npm test
 
 ☐ No new test failures?
@@ -673,4 +673,4 @@ npm test
 
 ---
 
-**Last Updated**: 2026-04-01 | For VirtualStudio v1.0
+**Last Updated**: 2026-04-01 | For Copilot v1.0

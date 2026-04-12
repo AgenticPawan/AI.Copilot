@@ -1,11 +1,11 @@
 ---
 mode: 'agent'
-description: "Add a new backend feature end-to-end. Use when: creating a new entity with full CRUD (Entity → DTO → Command/Query → Handler → Validator → DbContext → Controller → Permissions → Migration). Generates production-ready code following VirtualStudio Clean Architecture patterns."
+description: "Add a new backend feature end-to-end. Use when: creating a new entity with full CRUD (Entity → DTO → Command/Query → Handler → Validator → DbContext → Controller → Permissions → Migration). Generates production-ready code following Copilot Clean Architecture patterns."
 ---
 
 # Backend Feature: Add New Entity & CRUD
 
-You are building a new backend feature for the VirtualStudio multi-tenant SaaS platform.
+You are building a new backend feature for the Copilot multi-tenant SaaS platform.
 
 ## Input Required
 Provide the following:
@@ -17,7 +17,7 @@ Provide the following:
 ## Step-by-Step Execution
 
 ### Step 1: Domain Entity
-Create `src/backend/VirtualStudio.Domain/Entities/{Entity}.cs`:
+Create `src/backend/Copilot.Domain/Entities/{Entity}.cs`:
 - Inherit from `BaseEntity`
 - Private parameterless constructor
 - Static `Create()` factory method with required parameters
@@ -27,13 +27,13 @@ Create `src/backend/VirtualStudio.Domain/Entities/{Entity}.cs`:
 - Add `TenantId` (Guid?) property if scope is `tenant-only` or `shared`
 
 ### Step 2: DTOs
-Create `src/backend/VirtualStudio.Application/DTOs/{Entity}/{Entity}Dtos.cs`:
+Create `src/backend/Copilot.Application/DTOs/{Entity}/{Entity}Dtos.cs`:
 - `{Entity}Dto` - read model for API responses (include Id, CreatedAt, all display properties)
 - `Create{Entity}Request` - write model for create (only user-provided fields, no Id)
 - `Update{Entity}Request` - write model for update (mutable fields + Id setter)
 
 ### Step 3: Commands & Queries
-Create in `src/backend/VirtualStudio.Application/Features/{Entity}/`:
+Create in `src/backend/Copilot.Application/Features/{Entity}/`:
 
 **Commands/{Entity}Commands.cs** - record definitions:
 ```
@@ -55,13 +55,13 @@ Delete{Entity}Command(Guid Id) : IRequest<Result<bool>>
 - `Get{Entities}PagedQuery(PagedQuery Paging)` → paged list using `.ToPagedResultAsync()`
 
 ### Step 4: Validators
-Create `src/backend/VirtualStudio.Application/Features/{Entity}/Validators/{Entity}Validators.cs`:
+Create `src/backend/Copilot.Application/Features/{Entity}/Validators/{Entity}Validators.cs`:
 - `Create{Entity}CommandValidator : AbstractValidator<Create{Entity}Command>`
 - `Update{Entity}CommandValidator : AbstractValidator<Update{Entity}Command>`
 - Rules: NotEmpty, MaximumLength, regex patterns where applicable
 
 ### Step 5: DbContext Interface Methods
-Add to the appropriate interface in `src/backend/VirtualStudio.Application/Interfaces/`:
+Add to the appropriate interface in `src/backend/Copilot.Application/Interfaces/`:
 - For host entities → `IHostDbContext.cs`
 - For tenant entities → `ITenantDbContext.cs` (or create if needed)
 - Methods: `Find{Entity}ByIdAsync`, `Add{Entity}Async`, `{Entities}Queryable` (IQueryable)
@@ -73,13 +73,13 @@ Add implementations to the appropriate DbContext:
 - Add `IQueryable<{Entity}> {Entities}Queryable => {Entities}.Where(x => !x.IsDeleted)`
 
 ### Step 7: EF Configuration
-Add to `src/backend/VirtualStudio.Persistence/Configurations/EntityConfigurations.cs`:
+Add to `src/backend/Copilot.Persistence/Configurations/EntityConfigurations.cs`:
 - `{Entity}Configuration : IEntityTypeConfiguration<{Entity}>`
 - Table name, key, property constraints, indexes, `HasQueryFilter(e => !e.IsDeleted)`
 - Call `AuditFieldConfigurations.ConfigureAuditFields<{Entity}>(builder)`
 
 ### Step 8: API Controller
-Create `src/backend/VirtualStudio.Api/Controllers/{Area}/{Entities}Controller.cs`:
+Create `src/backend/Copilot.Api/Controllers/{Area}/{Entities}Controller.cs`:
 - `[ApiController]`, `[Route("api/[controller]")]`
 - Inject: IMediator, ICrudNotificationService, ICurrentUserService, ITransactionStreamService, ICacheService, IOutputCacheStore, ILogger
 - CRUD endpoints with `[Authorize(Policy = "Permission:{Entity}.{Action}")]`
@@ -96,7 +96,7 @@ Create `src/backend/VirtualStudio.Api/Controllers/{Area}/{Entities}Controller.cs
 Remind the user to:
 ```bash
 cd src/backend
-dotnet ef migrations add Add{Entity} --project VirtualStudio.Persistence --startup-project VirtualStudio.Api --context {Host|Tenant}DbContext --output-dir Migrations/{Host|Tenant}
+dotnet ef migrations add Add{Entity} --project Copilot.Persistence --startup-project Copilot.Api --context {Host|Tenant}DbContext --output-dir Migrations/{Host|Tenant}
 ```
 
 ## Output Checklist

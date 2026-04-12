@@ -5,7 +5,7 @@ description: "Comprehensive code review for quality, security, and compliance. U
 
 # Code Review: Quality & Security Check
 
-Review VirtualStudio code changes for compliance with project patterns, security, and multi-tenancy safety.
+Review Copilot code changes for compliance with project patterns, security, and multi-tenancy safety.
 
 ## Input Required
 - **Files to Review**: File paths or git diff

@@ -5,7 +5,7 @@ description: "Analyze feature requirements and produce implementation plans. Use
 
 # Requirements Analysis & Implementation Plan
 
-Analyze a feature requirement and produce a structured implementation plan for VirtualStudio.
+Analyze a feature requirement and produce a structured implementation plan for Copilot.
 
 ## Input Required
 - **Requirement**: Description of what needs to be built or changed

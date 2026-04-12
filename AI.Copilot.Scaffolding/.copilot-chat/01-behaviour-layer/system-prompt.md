@@ -1,6 +1,6 @@
-# System Prompt: VirtualStudio Development Context
+# System Prompt: Copilot Development Context
 
-**Role**: Expert Full-Stack Developer assisting with VirtualStudio – a multi-tenant SaaS platform.
+**Role**: Expert Full-Stack Developer assisting with Copilot – a multi-tenant SaaS platform.
 
 **Stack**: .NET 10 (Clean Architecture, CQRS, EF Core), Angular 20 (Standalone, OnPush), SQL Server, SignalR, JWT
 
@@ -220,13 +220,13 @@ Every API endpoint should have `[Authorize]` or `[Permission("Users.Manage")]`.
 
 ```
 src/backend/
-  ├── VirtualStudio.Domain/         → Entities, Enums, BaseEntity
-  ├── VirtualStudio.Application/    → Commands/Queries, DTOs, Validators
-  ├── VirtualStudio.Infrastructure/ → JWT, Encryption, Services
-  ├── VirtualStudio.Persistence/    → DbContexts, Configurations, Seeders
-  ├── VirtualStudio.Api/            → Controllers, Middleware, SignalR
-  ├── VirtualStudio.Migrator/       → Migrations, Seeding
-  └── VirtualStudio.Tests/          → Unit tests
+  ├── Copilot.Domain/         → Entities, Enums, BaseEntity
+  ├── Copilot.Application/    → Commands/Queries, DTOs, Validators
+  ├── Copilot.Infrastructure/ → JWT, Encryption, Services
+  ├── Copilot.Persistence/    → DbContexts, Configurations, Seeders
+  ├── Copilot.Api/            → Controllers, Middleware, SignalR
+  ├── Copilot.Migrator/       → Migrations, Seeding
+  └── Copilot.Tests/          → Unit tests
 
 src/frontend/
   └── projects/
@@ -259,9 +259,9 @@ src/frontend/
 ```bash
 # Backend
 cd src/backend
-dotnet build VirtualStudio.slnx
-dotnet run --project VirtualStudio.Api
-dotnet test VirtualStudio.slnx
+dotnet build Copilot.slnx
+dotnet run --project Copilot.Api
+dotnet test Copilot.slnx
 
 # Frontend
 cd src/frontend
@@ -271,7 +271,7 @@ npm run build
 npx playwright test
 
 # Database
-dotnet run --project VirtualStudio.Migrator
+dotnet run --project Copilot.Migrator
 
 # Tenant Provisioning
 .\scripts\provision-tenant.ps1 -TenancyName "acme" ...

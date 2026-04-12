@@ -1,4 +1,4 @@
-# Coding Standards: VirtualStudio Code Quality Guide
+# Coding Standards: Copilot Code Quality Guide
 
 ## 📝 Backend (.NET 10) Standards
 
@@ -596,4 +596,4 @@ describe('UserListComponent', () => {
 
 ---
 
-**Last Updated**: 2026-04-01 | For VirtualStudio v1.0
+**Last Updated**: 2026-04-01 | For Copilot v1.0

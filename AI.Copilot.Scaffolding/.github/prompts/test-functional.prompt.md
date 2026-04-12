@@ -5,7 +5,7 @@ description: "Generate structured functional test cases from requirements. Use w
 
 # Functional Testing: Test Case Generation
 
-Generate structured functional test cases for VirtualStudio features.
+Generate structured functional test cases for Copilot features.
 
 ## Input Required
 - **Feature**: Feature name and description

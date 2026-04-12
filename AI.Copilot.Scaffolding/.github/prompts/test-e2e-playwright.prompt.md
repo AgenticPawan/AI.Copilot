@@ -5,7 +5,7 @@ description: "Write Playwright end-to-end tests for Angular features. Use when: 
 
 # E2E Testing: Frontend (Playwright)
 
-Write Playwright end-to-end tests for VirtualStudio portal features.
+Write Playwright end-to-end tests for Copilot portal features.
 
 ## Input Required
 - **Feature**: Which page/flow to test (e.g., `login`, `tenant-management`, `document-upload`)

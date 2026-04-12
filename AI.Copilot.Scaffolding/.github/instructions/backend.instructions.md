@@ -1,16 +1,16 @@
 ---
 applyTo: "**/*.cs"
-description: "Backend .NET coding standards for VirtualStudio. Applies automatically to all C# files. Enforces Clean Architecture, CQRS, entity patterns, Result<T>, multi-tenancy, and security requirements."
+description: "Backend .NET coding standards for Copilot. Applies automatically to all C# files. Enforces Clean Architecture, CQRS, entity patterns, Result<T>, multi-tenancy, and security requirements."
 ---
 
-# .NET Backend Standards — VirtualStudio
+# .NET Backend Standards — Copilot
 
 ## Architecture Layers (NEVER violate)
-- **Domain** (`VirtualStudio.Domain/`) = Entities with private constructors, static Create() factories, private setters, behavior methods. NO framework dependencies.
-- **Application** (`VirtualStudio.Application/`) = CQRS handlers returning `Result<T>`, FluentValidation validators, DTOs, interfaces.
-- **Infrastructure** (`VirtualStudio.Infrastructure/`) = JWT, BCrypt, AES, tenant resolution, external integrations.
-- **Persistence** (`VirtualStudio.Persistence/`) = EF Core DbContexts with repository methods ON context (NO separate repository classes).
-- **Api** (`VirtualStudio.Api/`) = Thin controllers: authorize → dispatch MediatR → check Result → return HTTP status.
+- **Domain** (`Copilot.Domain/`) = Entities with private constructors, static Create() factories, private setters, behavior methods. NO framework dependencies.
+- **Application** (`Copilot.Application/`) = CQRS handlers returning `Result<T>`, FluentValidation validators, DTOs, interfaces.
+- **Infrastructure** (`Copilot.Infrastructure/`) = JWT, BCrypt, AES, tenant resolution, external integrations.
+- **Persistence** (`Copilot.Persistence/`) = EF Core DbContexts with repository methods ON context (NO separate repository classes).
+- **Api** (`Copilot.Api/`) = Thin controllers: authorize → dispatch MediatR → check Result → return HTTP status.
 
 ## Entity Rules
 - Private parameterless constructor for EF Core

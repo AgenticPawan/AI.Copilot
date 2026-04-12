@@ -1,9 +1,9 @@
 ---
 applyTo: "**/Security/**,**/Authorization/**,**/Middleware/**,**/JWT*,**/Encrypt*,**/BCrypt*"
-description: "Security standards for VirtualStudio. Applies to security-related files. Enforces permission-based authorization, encryption, password hashing, and OWASP Top 10 protections."
+description: "Security standards for Copilot. Applies to security-related files. Enforces permission-based authorization, encryption, password hashing, and OWASP Top 10 protections."
 ---
 
-# Security Standards — VirtualStudio
+# Security Standards — Copilot
 
 ## Authentication Stack
 | Layer | Technology | Details |

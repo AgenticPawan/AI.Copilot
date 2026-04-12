@@ -1,4 +1,4 @@
-# VirtualStudio Copilot System — Quick Start Guide
+# Copilot Copilot System — Quick Start Guide
 
 ## System Architecture
 
@@ -16,7 +16,7 @@
   instructions/                     ← AUTO-APPLIED RULES (file-pattern based)
     backend.instructions.md          → Applies to **/*.cs
     frontend.instructions.md         → Applies to **/*.{ts,html,scss}
-    testing.instructions.md          → Applies to **/VirtualStudio.Tests/**
+    testing.instructions.md          → Applies to **/Copilot.Tests/**
     multi-tenancy.instructions.md    → Applies to tenant-related files
     security.instructions.md         → Applies to security-related files
   
@@ -59,7 +59,7 @@
 
 ### 1. Workspace Instructions (Automatic)
 VS Code reads `.github/copilot-instructions.md` automatically. No manual setup needed.
-Verify: Open Copilot Chat → type any question → response should respect VirtualStudio patterns.
+Verify: Open Copilot Chat → type any question → response should respect Copilot patterns.
 
 ### 2. File-Based Instructions (Automatic)
 Instructions in `.github/instructions/` auto-apply based on `applyTo` patterns:
@@ -110,7 +110,7 @@ Click the **attach** button (paperclip icon) in Copilot Chat → select a `.prom
 
 ### Code Review
 1. Attach `code-review.prompt.md`
-2. Type: `Review changes in src/backend/VirtualStudio.Application/Features/Invoices/`
+2. Type: `Review changes in src/backend/Copilot.Application/Features/Invoices/`
 
 ### Production Incident
 1. Attach `production-support.prompt.md`

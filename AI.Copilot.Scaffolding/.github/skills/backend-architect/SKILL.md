@@ -1,6 +1,6 @@
 ---
 name: backend-architect
-description: "Backend architecture reasoning and execution skills for VirtualStudio. Use when: designing features across Clean Architecture layers, enforcing CQRS patterns, reviewing code for architecture violations, optimizing EF Core queries, or implementing multi-tenant features."
+description: "Backend architecture reasoning and execution skills for Copilot. Use when: designing features across Clean Architecture layers, enforcing CQRS patterns, reviewing code for architecture violations, optimizing EF Core queries, or implementing multi-tenant features."
 ---
 
 # Backend Architect Skills

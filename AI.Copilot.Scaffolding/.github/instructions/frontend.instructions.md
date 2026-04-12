@@ -1,9 +1,9 @@
 ---
 applyTo: "**/*.{ts,html,scss}"
-description: "Angular 20 frontend coding standards for VirtualStudio. Applies automatically to TypeScript, HTML, and SCSS files. Enforces standalone components, OnPush, signals, inject(), @libs/* imports, and UI conventions."
+description: "Angular 20 frontend coding standards for Copilot. Applies automatically to TypeScript, HTML, and SCSS files. Enforces standalone components, OnPush, signals, inject(), @libs/* imports, and UI conventions."
 ---
 
-# Angular Frontend Standards — VirtualStudio
+# Angular Frontend Standards — Copilot
 
 ## Component Rules (MANDATORY)
 - `standalone: true` — ALWAYS, no NgModules

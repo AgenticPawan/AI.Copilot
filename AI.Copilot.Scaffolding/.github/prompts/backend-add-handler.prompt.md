@@ -5,7 +5,7 @@ description: "Add a new MediatR command or query handler to an existing feature.
 
 # Backend: Add Command or Query Handler
 
-Add a new MediatR command or query to an existing feature area in VirtualStudio.
+Add a new MediatR command or query to an existing feature area in Copilot.
 
 ## Input Required
 - **Entity**: Which existing entity (e.g., `User`, `Tenant`, `Document`)
@@ -23,7 +23,7 @@ public record {OperationName}{Command|Query}({Params}) : IRequest<Result<{Return
 ```
 
 ### 2. Create the Handler
-Create `src/backend/VirtualStudio.Application/Features/{Area}/{Commands|Queries}/{OperationName}Handler.cs`:
+Create `src/backend/Copilot.Application/Features/{Area}/{Commands|Queries}/{OperationName}Handler.cs`:
 - Follow existing handler patterns in that feature area
 - Use `IUserAccountDbContextResolver.Resolve()` for user-scoped operations
 - Use `IHostDbContext` directly for host-only operations

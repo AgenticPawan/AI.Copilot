@@ -5,7 +5,7 @@ description: "Production issue triage and resolution. Use when: investigating P1
 
 # Production Support: Issue Triage & Resolution
 
-Systematic production issue investigation for VirtualStudio SaaS platform.
+Systematic production issue investigation for Copilot SaaS platform.
 
 ## Input Required
 - **Severity**: `P1-Critical` (system down) | `P2-High` (major feature broken) | `P3-Medium` (degraded) | `P4-Low` (cosmetic)

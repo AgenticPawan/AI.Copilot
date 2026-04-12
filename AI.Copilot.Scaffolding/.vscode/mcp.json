@@ -13,7 +13,7 @@
                 "@modelcontextprotocol/server-filesystem"
             ],
             "env": {
-                "MCP_FS_ROOT": "E:\\GITHUB\\AI.VirtualStudio"
+                "MCP_FS_ROOT": "E:\\GITHUB\\AI.Copilot"
             }
         },
         "angular-playwright": {
@@ -34,7 +34,7 @@
                 "mcp"
             ],
             "env": {
-                "NG_CLI_PROJECT": "E:\\GITHUB\\AI.VirtualStudio\\src\\frontend"
+                "NG_CLI_PROJECT": "E:\\GITHUB\\AI.Copilot\\src\\frontend"
             }
         },
         "dotnet": {

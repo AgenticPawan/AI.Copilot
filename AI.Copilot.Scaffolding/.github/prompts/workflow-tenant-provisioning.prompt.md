@@ -5,7 +5,7 @@ description: "Automate new tenant provisioning. Use when: onboarding a new tenan
 
 # Workflow: New Tenant Provisioning
 
-Automate the provisioning of a new tenant in VirtualStudio.
+Automate the provisioning of a new tenant in Copilot.
 
 ## Input Required
 - **Tenant Name**: Subdomain-safe name (e.g., `acmecorp`)
@@ -28,7 +28,7 @@ Server={DbServer};Database=VS_Tenant_{TenantName};Trusted_Connection=true;TrustS
 ### Step 3: Run Tenant Migrations
 Use the Migrator console app or EF CLI:
 ```bash
-cd src/backend/VirtualStudio.Migrator
+cd src/backend/Copilot.Migrator
 dotnet run -- --tenant-connection "{ConnectionString}"
 ```
 This runs all `TenantDbContext` migrations against the new database.

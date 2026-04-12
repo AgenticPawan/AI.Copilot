@@ -1,9 +1,9 @@
 ---
 applyTo: "**/Tenancy/**,**/TenantDb*,**/HostDb*,**/TenantProvider*,**/TenantResolution*"
-description: "Multi-tenancy safety rules for VirtualStudio. Applies to tenant-related files. Enforces database-per-tenant isolation, encrypted connection strings, query filters, and cross-tenant access prevention."
+description: "Multi-tenancy safety rules for Copilot. Applies to tenant-related files. Enforces database-per-tenant isolation, encrypted connection strings, query filters, and cross-tenant access prevention."
 ---
 
-# Multi-Tenancy Safety — VirtualStudio
+# Multi-Tenancy Safety — Copilot
 
 ## Architecture
 - **DNS-based resolution**: Subdomain extracted by `TenantProvider` (checks X-Forwarded-Host, Host, Origin headers)

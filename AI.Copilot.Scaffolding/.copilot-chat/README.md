@@ -1,12 +1,12 @@
-# VirtualStudio AI Development System
+# Copilot AI Development System
 
-> **Note**: This folder contains reference documentation for the VirtualStudio AI-assisted development system. The actual Copilot configuration files live in `.github/` and `.vscode/`. See [Quick Start](../.github/COPILOT_QUICK_START.md).
+> **Note**: This folder contains reference documentation for the Copilot AI-assisted development system. The actual Copilot configuration files live in `.github/` and `.vscode/`. See [Quick Start](../.github/COPILOT_QUICK_START.md).
 
 ---
 
 ## System Overview
 
-VirtualStudio uses a layered AI assistance architecture with GitHub Copilot:
+Copilot uses a layered AI assistance architecture with GitHub Copilot:
 
 | Layer | Location | Auto-Loaded? | Purpose |
 |-------|----------|-------------|---------|
@@ -37,7 +37,7 @@ VirtualStudio uses a layered AI assistance architecture with GitHub Copilot:
 |------|-------------------|----------|
 | `backend.instructions.md` | `**/*.cs` | Clean Architecture, CQRS, Result\<T\>, tenant isolation |
 | `frontend.instructions.md` | `**/*.{ts,html,scss}` | Standalone, OnPush, signals, @libs/*, FontAwesome |
-| `testing.instructions.md` | `**/VirtualStudio.Tests/**` | xUnit patterns, required scenarios, FluentAssertions |
+| `testing.instructions.md` | `**/Copilot.Tests/**` | xUnit patterns, required scenarios, FluentAssertions |
 | `multi-tenancy.instructions.md` | Tenant-related files | Database-per-tenant, query filters, encrypted connections |
 | `security.instructions.md` | Security-related files | Permissions, AES, BCrypt, OWASP Top 10 |
 
@@ -97,4 +97,4 @@ The files in `.copilot-chat/` provide supplementary architecture reference:
 
 ---
 
-**Last Updated**: 2026-04-01 | **Version**: 1.0 | **For**: VirtualStudio v1.0
+**Last Updated**: 2026-04-01 | **Version**: 1.0 | **For**: Copilot v1.0

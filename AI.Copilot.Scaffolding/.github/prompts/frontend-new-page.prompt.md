@@ -5,7 +5,7 @@ description: "Create a new Angular page with full CRUD operations. Use when: bui
 
 # Frontend Feature: New Page with CRUD
 
-Create a new Angular page in the VirtualStudio portal with full CRUD operations.
+Create a new Angular page in the Copilot portal with full CRUD operations.
 
 ## Input Required
 - **Feature Name**: (e.g., `invoices`)

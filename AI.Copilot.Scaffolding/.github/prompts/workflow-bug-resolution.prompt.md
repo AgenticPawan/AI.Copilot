@@ -43,7 +43,7 @@ Use `test-unit-backend.prompt.md`:
 ### Phase 5: Verify
 ```bash
 # Run all backend tests
-cd src/backend && dotnet test VirtualStudio.Tests
+cd src/backend && dotnet test Copilot.Tests
 
 # Build frontend if changed
 cd src/frontend && ng build portal

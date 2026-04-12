@@ -1,9 +1,9 @@
-# Architecture Guide: VirtualStudio Design Patterns
+# Architecture Guide: Copilot Design Patterns
 
 ## 🏗️ Clean Architecture Layers
 
 ### Layer 1: Domain (Core Business Logic)
-**Location**: `src/backend/VirtualStudio.Domain/`
+**Location**: `src/backend/Copilot.Domain/`
 
 **Responsibilities**:
 - Define entities with business rules
@@ -15,9 +15,9 @@
 
 **Entity with Factory Pattern**:
 ```csharp
-using VirtualStudio.Domain.Common;
+using Copilot.Domain.Common;
 
-namespace VirtualStudio.Domain.Entities;
+namespace Copilot.Domain.Entities;
 
 public class User : BaseEntity
 {
@@ -59,7 +59,7 @@ public class User : BaseEntity
 ---
 
 ### Layer 2: Application (Use Cases / Business Operations)
-**Location**: `src/backend/VirtualStudio.Application/`
+**Location**: `src/backend/Copilot.Application/`
 
 **Responsibilities**:
 - Orchestrate business logic (Commands/Queries)
@@ -169,7 +169,7 @@ public class UserDto
 ---
 
 ### Layer 3: Infrastructure (External Services)
-**Location**: `src/backend/VirtualStudio.Infrastructure/`
+**Location**: `src/backend/Copilot.Infrastructure/`
 
 **Responsibilities**:
 - JWT token generation/validation
@@ -228,7 +228,7 @@ public interface IPermissionService
 ---
 
 ### Layer 4: Persistence (Data Access)
-**Location**: `src/backend/VirtualStudio.Persistence/`
+**Location**: `src/backend/Copilot.Persistence/`
 
 **Responsibilities**:
 - EF Core DbContext configuration
@@ -332,7 +332,7 @@ public class UserRepository : IUserRepository
 ---
 
 ### Layer 5: API (Controllers / Endpoints)
-**Location**: `src/backend/VirtualStudio.Api/`
+**Location**: `src/backend/Copilot.Api/`
 
 **Responsibilities**:
 - HTTP endpoints (REST)
@@ -415,7 +415,7 @@ public class ApiError
 ---
 
 ### Middleware (Cross-Cutting Concerns)
-**Location**: `src/backend/VirtualStudio.Api/Middleware/`
+**Location**: `src/backend/Copilot.Api/Middleware/`
 
 **Exception Handling Middleware**:
 - Catches all exceptions
@@ -436,7 +436,7 @@ public class ApiError
 ## 🔄 Multi-Tenancy Flow
 
 ```
-Browser Request (acme.virtualstudio.com)
+Browser Request (acme.Copilot.com)
          ↓
 TenantResolutionMiddleware
          ↓↓
@@ -647,4 +647,4 @@ SQL Server
 
 ---
 
-**Last Updated**: 2026-04-01 | For VirtualStudio v1.0
+**Last Updated**: 2026-04-01 | For Copilot v1.0

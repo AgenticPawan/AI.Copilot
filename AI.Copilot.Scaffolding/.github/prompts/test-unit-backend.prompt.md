@@ -5,7 +5,7 @@ description: "Write xUnit unit tests with Moq and FluentAssertions. Use when: te
 
 # Unit Testing: Backend (xUnit + Moq + FluentAssertions)
 
-Write unit tests for VirtualStudio backend code.
+Write unit tests for Copilot backend code.
 
 ## Input Required
 - **Target**: Class/method to test (e.g., `CreateTenantCommandHandler`, `User.RecordFailedLogin`)
@@ -16,11 +16,11 @@ Write unit tests for VirtualStudio backend code.
 using Moq;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
-using VirtualStudio.Application.Common;
-using VirtualStudio.Application.Interfaces;
-using VirtualStudio.Domain.Entities;
+using Copilot.Application.Common;
+using Copilot.Application.Interfaces;
+using Copilot.Domain.Entities;
 
-namespace VirtualStudio.Tests.Application;
+namespace Copilot.Tests.Application;
 
 public class {Handler}Tests
 {
@@ -130,12 +130,12 @@ public class {Validator}Tests
 5. **Tenant isolation** - operations respect tenant boundaries
 
 ## File Location
-Place tests in `src/backend/VirtualStudio.Tests/{Layer}/`:
+Place tests in `src/backend/Copilot.Tests/{Layer}/`:
 - `Application/` for handler and validator tests
 - `Domain/` for entity tests
 - `Infrastructure/` for service tests
 
 ## Run Tests
 ```bash
-cd src/backend && dotnet test VirtualStudio.Tests
+cd src/backend && dotnet test Copilot.Tests
 ```

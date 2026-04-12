@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Production-ready scaffold for Copilot workspace layers.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.1.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.1.0+835a8c885c5f2456e66d4b9ad632a736d2728c6e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.1.0+9016255107b4990d14aeaee7cf551cf11b1204d0")]
 [assembly: System.Reflection.AssemblyProductAttribute("AI.Copilot.Scaffolding")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AI.Copilot.Scaffolding")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.1.0.0")]

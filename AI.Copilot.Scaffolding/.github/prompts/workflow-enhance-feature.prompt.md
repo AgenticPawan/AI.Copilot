@@ -16,10 +16,10 @@ Add new capabilities to an existing feature without breaking current functionali
 
 ### Phase 1: Current State Analysis
 1. Read the existing files across all layers:
-   - Entity: `VirtualStudio.Domain/Entities/{Entity}.cs`
-   - DTOs: `VirtualStudio.Application/DTOs/{Area}/`
-   - Handlers: `VirtualStudio.Application/Features/{Area}/`
-   - Controller: `VirtualStudio.Api/Controllers/{Area}/`
+   - Entity: `Copilot.Domain/Entities/{Entity}.cs`
+   - DTOs: `Copilot.Application/DTOs/{Area}/`
+   - Handlers: `Copilot.Application/Features/{Area}/`
+   - Controller: `Copilot.Api/Controllers/{Area}/`
    - Frontend: `projects/portal/src/app/pages/{scope}/{feature}/`
 2. Map current API contract (endpoints, request/response shapes)
 3. Identify existing unit tests to understand tested behaviors
@@ -54,7 +54,7 @@ Add new capabilities to an existing feature without breaking current functionali
 
 ### Phase 6: Verify
 ```bash
-cd src/backend && dotnet build VirtualStudio.slnx && dotnet test VirtualStudio.Tests
+cd src/backend && dotnet build Copilot.slnx && dotnet test Copilot.Tests
 cd src/frontend && ng build portal
 ```
 

@@ -506,7 +506,7 @@ describe('DocumentService', () => {
 ```bash
 # Backend - Run all tests
 cd src/backend
-dotnet test VirtualStudio.slnx
+dotnet test Copilot.slnx
 
 # Backend - Run specific test
 dotnet test --filter "CreateUserCommandHandlerTests"
@@ -524,4 +524,4 @@ npm test -- --code-coverage
 
 ---
 
-**Last Updated**: 2026-04-01 | For VirtualStudio v1.0
+**Last Updated**: 2026-04-01 | For Copilot v1.0

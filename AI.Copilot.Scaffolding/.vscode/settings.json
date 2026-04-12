@@ -1,0 +1,131 @@
+{
+    // ── Copilot Agent ──────────────────────────────────────────
+    "chat.agent.maxRequests": 100000,
+    // ── Copilot Chat: Instructions & Prompts ───────────────────
+    // Auto-load .github/copilot-instructions.md as system context
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+    // Enable reusable prompt files from .github/prompts/
+    "chat.promptFiles": true,
+    // Enable custom agents from .github/agents/
+    "chat.agents.enabled": true,
+    // ── Copilot Chat: Auto-Approve Settings ────────────────────
+    // Auto-approve Copilot agent tool invocations without manual confirmation
+    // Options: "never" | "withChat" | "always"
+    "chat.tools.autoApprove": "withChat",
+    // ── Copilot Chat: Allowed Terminal Commands ────────────────
+    // Auto-approve these terminal commands when Copilot suggests them
+    "github.copilot.chat.terminalChatAutoApprove.commands": [
+        // .NET
+        "dotnet build",
+        "dotnet test",
+        "dotnet run",
+        "dotnet ef migrations add",
+        "dotnet ef database update",
+        "dotnet restore",
+        "dotnet clean",
+        "dotnet publish",
+        // Angular
+        "ng serve",
+        "ng build",
+        "ng test",
+        "ng generate",
+        "ng lint",
+        "npm install",
+        "npm run",
+        "npm ci",
+        "npx playwright test",
+        // Git (read-only)
+        "git status",
+        "git log",
+        "git diff",
+        "git branch",
+        "git show",
+        // Project scripts
+        "cd src/backend",
+        "cd src/frontend"
+    ],
+    // ── Copilot: Code Generation Preferences ───────────────────
+    "github.copilot.chat.codeGeneration.instructions": [
+        {
+            "file": ".github/copilot-instructions.md"
+        }
+    ],
+    // Test generation follows the same instruction set
+    "github.copilot.chat.testGeneration.instructions": [
+        {
+            "file": ".github/copilot-instructions.md"
+        }
+    ],
+    // Code review follows the same instruction set
+    "github.copilot.chat.reviewSelection.instructions": [
+        {
+            "file": ".github/copilot-instructions.md"
+        }
+    ],
+    // Commit message style
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+        {
+            "text": "Use conventional commits format: feat|fix|refactor|test|docs|chore(scope): description. Scope should be the feature area (e.g., tenants, auth, documents). Keep the subject line under 72 characters. Add body for non-trivial changes."
+        }
+    ],
+    // ── Copilot: Inline Suggestions ────────────────────────────
+    "github.copilot.enable": {
+        "*": true,
+        "markdown": true,
+        "plaintext": false,
+        "scminput": true
+    },
+    // ── Editor: Language-Specific Overrides ─────────────────────
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp",
+        "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features",
+        "editor.formatOnSave": true
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features",
+        "editor.formatOnSave": true
+    },
+    "github.copilot.chat.agent.autoFix": true,
+    "chat.mcp.serverSampling": {
+        "AI.VirtualStudio/.vscode/mcp.json: angular": {
+            "allowedModels": [
+                "copilot/auto",
+                "copilotcli/claude-sonnet-4.6",
+                "claude-code/claude-haiku-4.5",
+                "copilot/claude-haiku-4.5",
+                "copilotcli/claude-haiku-4.5",
+                "copilotcli/claude-opus-4.5",
+                "copilot/claude-opus-4.6",
+                "copilotcli/claude-opus-4.6",
+                "copilotcli/claude-sonnet-4",
+                "copilotcli/claude-sonnet-4.5",
+                "claude-code/claude-sonnet-4.6",
+                "copilot/claude-sonnet-4.6"
+            ]
+        },
+        "AI.VirtualStudio/.vscode/mcp.json: dotnet": {
+            "allowedModels": [
+                "copilot/auto",
+                "copilotcli/claude-sonnet-4.6",
+                "claude-code/claude-haiku-4.5",
+                "copilot/claude-haiku-4.5",
+                "copilotcli/claude-haiku-4.5",
+                "copilotcli/claude-opus-4.5",
+                "claude-code/claude-opus-4.6",
+                "copilot/claude-opus-4.6",
+                "copilotcli/claude-opus-4.6",
+                "copilotcli/claude-sonnet-4",
+                "copilotcli/claude-sonnet-4.5",
+                "claude-code/claude-sonnet-4.6",
+                "copilot/claude-sonnet-4.6"
+            ]
+        }
+    }
+}

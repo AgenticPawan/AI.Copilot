@@ -1,0 +1,53 @@
+# Build artifacts
+bin/
+obj/
+out/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+# Prevent local NuGet cache from being committed
+*.nuget.props
+*.nuget.targets
+
+# Logs
+*.log
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code settings
+.vscode/*
+!.vscode/settings.json
+!.vscode/mcp.json
+
+# Copilot scaffold cache
+.copilot-chat/.cache/
+.copilot-chat/.temp/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# GitHub Actions runner logs
+.github/workflows/*.log
+
+# Ignore secrets or keys
+secrets.json
+*.key
+*.pfx
+
+# Ignore test results
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+
+# Ignore IDE-specific folders
+.idea/
+.vs/

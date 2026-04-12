@@ -118,13 +118,15 @@
         <WriteLinesToFile File="$(MSBuildProjectDirectory)\.github\prompts\copilot-instructions.md"
             Lines="## Copilot Instructions`nDefines Copilot usage and prompts." Overwrite="false" />
 
+        <!-- GitHub Skills -->
         <WriteLinesToFile
-            File="$(MSBuildProjectDirectory)\.github\prompts\workflows\COPILOT_QUICK_START.md"
-            Lines="## Copilot Quick Start Workflow`nSteps to bootstrap Copilot." Overwrite="false" />
-
-        <WriteLinesToFile
-            File="$(MSBuildProjectDirectory)\.github\prompts\skills\backend-architect\SKILL.md"
+            File="$(MSBuildProjectDirectory)\.github\skills\backend-architect\SKILL.md"
             Lines="## Backend Architect Skill`nDefines backend skill prompts." Overwrite="false" />
+       
+        <!-- GitHub Workflows -->
+        <WriteLinesToFile
+            File="$(MSBuildProjectDirectory)\.github\workflows\COPILOT_QUICK_START.md"
+            Lines="## Copilot Quick Start Workflow`nSteps to bootstrap Copilot." Overwrite="false" />
 
         <!-- VSCode Config -->
         <WriteLinesToFile File="$(MSBuildProjectDirectory)\.vscode\mcp.json"

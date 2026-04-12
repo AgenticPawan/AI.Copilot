@@ -50,9 +50,17 @@ When installed, it creates a modular folder and file structure designed for ente
     security.instructions.md
     testing.instructions.md
   prompts/
-    skills/backend-architect/SKILL.md
-    workflows/COPILOT_QUICK_START.md
-    copilot-instructions.md
+
+  skills/
+    backend-architect/SKILL.md
+    devops-engineer/SKILL.md
+    frontend-engineer/SKILL.md
+    fullstack-architect/SKILL.md
+    qa-engineer/SKILL.md
+  workflows/
+  
+  COPILOT_QUICK_START.md
+  copilot-instructions.md
 
 .vscode/
   mcp.json
@@ -65,7 +73,7 @@ When installed, it creates a modular folder and file structure designed for ente
 
 ### Using .NET CLI
 ```bash
-dotnet add package AI.Copilot.Scaffolding --version 1.0.0
+dotnet add package AI.Copilot.Scaffolding --version 1.1.0
 ```
 
 ### Using Visual Studio / Rider

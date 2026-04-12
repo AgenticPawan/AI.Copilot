@@ -1,0 +1,76 @@
+name: Scaffold Compliance Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  scaffold-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Install scaffold NuGet package
+        run: dotnet add package AI.VirtualStudio.Scaffolding --version 1.0.0
+
+      - name: Verify scaffold structure
+        run: |
+          echo "Checking scaffold compliance..."
+          REQUIRED_PATHS=(
+            ".copilot-chat/01-behaviour-layer/coding-standards.md"
+            ".copilot-chat/01-behaviour-layer/system-prompt.md"
+            ".copilot-chat/02-task-layer/api-integration.md"
+            ".copilot-chat/02-task-layer/backend-feature.md"
+            ".copilot-chat/02-task-layer/bug-fix.md"
+            ".copilot-chat/02-task-layer/frontend-feature.md"
+            ".copilot-chat/02-task-layer/unit-testing.md"
+            ".copilot-chat/03-persona-layer/personas.md"
+            ".copilot-chat/04-workflow-layer/workflows.md"
+            ".copilot-chat/04-workflow-layer/QUICK_START.md"
+            ".copilot-chat/04-workflow-layer/README.md"
+            ".github/agents/backend-architect.agent.md"
+            ".github/agents/devops-engineer.agent.md"
+            ".github/agents/frontend-engineer.agent.md"
+            ".github/agents/fullstack-architect.agent.md"
+            ".github/agents/qa-engineer.agent.md"
+            ".github/instructions/backend.instructions.md"
+            ".github/instructions/common.instructions.md"
+            ".github/instructions/frontend.instructions.md"
+            ".github/instructions/multi-tenancy.instructions.md"
+            ".github/instructions/security.instructions.md"
+            ".github/instructions/testing.instructions.md"
+            ".github/prompts/copilot-instructions.md"
+            ".github/skills/backend-architect/SKILL.md"
+            ".github/workflows/COPILOT_QUICK_START.md"
+            ".vscode/mcp.json"
+            ".vscode/settings.json"
+          )
+
+          MISSING=0
+          for path in "${REQUIRED_PATHS[@]}"; do
+            if [ ! -f "$path" ]; then
+              echo "❌ Missing: $path"
+              MISSING=1
+            else
+              echo "✅ Found: $path"
+            fi
+          done
+
+          if [ $MISSING -eq 1 ]; then
+            echo "Scaffold compliance check failed."
+            exit 1
+          else
+            echo "All required scaffold files are present."
+          fi

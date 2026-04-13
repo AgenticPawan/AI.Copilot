@@ -1,4 +1,9 @@
-# 📘 instruction.md — MCP Server Full-Stack Playbook
+---
+applyTo: "**"
+description: "Cross-cutting development standards for {{projectName}}. Applies to all files. Covers Angular + .NET API setup, production support, upgrade workflow, QA, code review, and Playwright automation."
+---
+
+# Cross-Cutting Development Standards — {{projectName}}
 
 ## 1. Angular + .NET API Setup
 // Generate Angular project with MCP client integration  

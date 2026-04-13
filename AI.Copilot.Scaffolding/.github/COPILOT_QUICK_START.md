@@ -1,4 +1,4 @@
-# Copilot Copilot System — Quick Start Guide
+# {{projectName}} Copilot System — Quick Start Guide
 
 ## System Architecture
 
@@ -16,7 +16,7 @@
   instructions/                     ← AUTO-APPLIED RULES (file-pattern based)
     backend.instructions.md          → Applies to **/*.cs
     frontend.instructions.md         → Applies to **/*.{ts,html,scss}
-    testing.instructions.md          → Applies to **/Copilot.Tests/**
+    testing.instructions.md          → Applies to **/{{projectName}}.Tests/**
     multi-tenancy.instructions.md    → Applies to tenant-related files
     security.instructions.md         → Applies to security-related files
   
@@ -32,7 +32,7 @@
     bug-fix.prompt.md                → Diagnose and fix bugs
     production-support.prompt.md     → Production issue triage
     code-review.prompt.md            → Quality and security review
-    hard_critic_review.prompt.md     → Deep architecture audit
+    hard-critic-review.prompt.md     → Deep architecture audit
     requirements-analysis.prompt.md  → Implementation planning
     workflow-fullstack-feature.prompt.md   → Full stack delivery
     workflow-bug-resolution.prompt.md      → Bug lifecycle
@@ -43,6 +43,13 @@
 
   skills/                           ← REASONING SKILLS (agent capabilities)
     backend-architect/SKILL.md       → Architecture reasoning skills
+    frontend-engineer/SKILL.md       → Frontend component & UX skills
+    fullstack-architect/SKILL.md     → Cross-layer design skills
+    devops-engineer/SKILL.md         → Infrastructure & deployment skills
+    qa-engineer/SKILL.md             → Testing strategy & coverage skills
+
+  mcp-servers/                      ← MCP SERVERS (bundled tools)
+    DotnetMcpServer/                 → .NET standards & scaffold tool
 
   workflows/                        ← CI/CD (GitHub Actions)
     saas-compliance.yml
@@ -110,7 +117,7 @@ Click the **attach** button (paperclip icon) in Copilot Chat → select a `.prom
 
 ### Code Review
 1. Attach `code-review.prompt.md`
-2. Type: `Review changes in src/backend/Copilot.Application/Features/Invoices/`
+2. Type: `Review changes in src/backend/{{projectName}}.Application/Features/Invoices/`
 
 ### Production Incident
 1. Attach `production-support.prompt.md`

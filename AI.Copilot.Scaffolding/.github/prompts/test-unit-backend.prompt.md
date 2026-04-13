@@ -1,11 +1,11 @@
 ---
-mode: 'agent'
+agent: agent
 description: "Write xUnit unit tests with Moq and FluentAssertions. Use when: testing MediatR handlers, entity behavior, validators, or services. Generates tests for happy path, duplicates, validation failures, not-found, and tenant isolation."
 ---
 
 # Unit Testing: Backend (xUnit + Moq + FluentAssertions)
 
-Write unit tests for Copilot backend code.
+Write unit tests for {{projectName}} backend code.
 
 ## Input Required
 - **Target**: Class/method to test (e.g., `CreateTenantCommandHandler`, `User.RecordFailedLogin`)
@@ -16,11 +16,11 @@ Write unit tests for Copilot backend code.
 using Moq;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
-using Copilot.Application.Common;
-using Copilot.Application.Interfaces;
-using Copilot.Domain.Entities;
+using {{projectName}}.Application.Common;
+using {{projectName}}.Application.Interfaces;
+using {{projectName}}.Domain.Entities;
 
-namespace Copilot.Tests.Application;
+namespace {{projectName}}.Tests.Application;
 
 public class {Handler}Tests
 {
@@ -130,12 +130,12 @@ public class {Validator}Tests
 5. **Tenant isolation** - operations respect tenant boundaries
 
 ## File Location
-Place tests in `src/backend/Copilot.Tests/{Layer}/`:
+Place tests in `src/backend/{{projectName}}.Tests/{Layer}/`:
 - `Application/` for handler and validator tests
 - `Domain/` for entity tests
 - `Infrastructure/` for service tests
 
 ## Run Tests
 ```bash
-cd src/backend && dotnet test Copilot.Tests
+cd src/backend && dotnet test {{projectName}}.Tests
 ```

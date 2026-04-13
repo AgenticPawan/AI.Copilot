@@ -1,11 +1,11 @@
 ---
-mode: 'agent'
+agent: agent
 description: "Generate an EF Core migration for database schema changes. Use when: adding new entities, columns, indexes, or modifying table structure. Covers HostDbContext and TenantDbContext migrations with review steps."
 ---
 
 # Backend: Database Migration
 
-Generate EF Core migration for schema changes in Copilot.
+Generate EF Core migration for schema changes in {{projectName}}.
 
 ## Input Required
 - **Change Description**: What changed (new entity, new column, index, etc.)
@@ -14,7 +14,7 @@ Generate EF Core migration for schema changes in Copilot.
 ## Steps
 
 ### 1. Verify Entity Configuration
-Check `src/backend/Copilot.Persistence/Configurations/EntityConfigurations.cs`:
+Check `src/backend/{{projectName}}.Persistence/Configurations/EntityConfigurations.cs`:
 - Entity has `IEntityTypeConfiguration<T>` implementation
 - Table name, key, constraints, indexes are defined
 - `HasQueryFilter(e => !e.IsDeleted)` is applied
@@ -35,16 +35,16 @@ For **TenantDbContext** changes:
 # For Host database changes
 cd src/backend
 dotnet ef migrations add {MigrationName} \
-  --project Copilot.Persistence \
-  --startup-project Copilot.Api \
+  --project {{projectName}}.Persistence \
+  --startup-project {{projectName}}.Api \
   --context HostDbContext \
   --output-dir Migrations/Host
 
 # For Tenant database changes
 cd src/backend
 dotnet ef migrations add {MigrationName} \
-  --project Copilot.Persistence \
-  --startup-project Copilot.Api \
+  --project {{projectName}}.Persistence \
+  --startup-project {{projectName}}.Api \
   --context TenantDbContext \
   --output-dir Migrations/Tenant
 ```
@@ -56,14 +56,14 @@ dotnet ef migrations add {MigrationName} \
 - Verify foreign key cascade behavior (use `DeleteBehavior.NoAction` for self-referencing)
 
 ### 5. Seeder Updates (If Needed)
-Update seeders in `src/backend/Copilot.Persistence/Seeders/` if the new entity needs initial data.
+Update seeders in `src/backend/{{projectName}}.Persistence/Seeders/` if the new entity needs initial data.
 
 ### 6. Apply Migration
 ```bash
 # Via Migrator console app (preferred)
-cd src/backend/Copilot.Migrator
+cd src/backend/{{projectName}}.Migrator
 dotnet run
 
 # Or via EF CLI
-dotnet ef database update --context {Context} --project Copilot.Persistence --startup-project Copilot.Api
+dotnet ef database update --context {Context} --project {{projectName}}.Persistence --startup-project {{projectName}}.Api
 ```

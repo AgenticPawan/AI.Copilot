@@ -1,11 +1,11 @@
 ---
-mode: 'agent'
+agent: agent
 description: "Complete end-to-end full stack feature delivery. Use when: building a feature from scratch across all layers — requirements → domain → application → persistence → API → frontend → tests → migration → code review."
 ---
 
 # Workflow: Full Stack Feature Delivery
 
-Complete end-to-end feature development across all layers of Copilot.
+Complete end-to-end feature development across all layers of {{projectName}}.
 
 ## Input Required
 - **Feature Requirement**: What needs to be built
@@ -23,16 +23,16 @@ Use the approach from `requirements-analysis.prompt.md`:
 
 ### Phase 2: Backend Implementation
 Use `backend-new-feature.prompt.md` for each new entity:
-1. **Domain Entity** → `Copilot.Domain/Entities/`
-2. **DTOs** → `Copilot.Application/DTOs/{Feature}/`
-3. **Command/Query definitions** → `Copilot.Application/Features/{Feature}/Commands/` and `Queries/`
+1. **Domain Entity** → `{{projectName}}.Domain/Entities/`
+2. **DTOs** → `{{projectName}}.Application/DTOs/{Feature}/`
+3. **Command/Query definitions** → `{{projectName}}.Application/Features/{Feature}/Commands/` and `Queries/`
 4. **Handlers** → Same directories (one file per handler or grouped CRUD)
-5. **Validators** → `Copilot.Application/Features/{Feature}/Validators/`
-6. **DbContext interface methods** → `Copilot.Application/Interfaces/IHostDbContext.cs` or `ITenantDbContext.cs`
-7. **EF Configuration** → `Copilot.Persistence/Configurations/EntityConfigurations.cs`
-8. **DbContext implementation** → `Copilot.Persistence/Contexts/`
-9. **API Controller** → `Copilot.Api/Controllers/{Area}/`
-10. **Permission seeds** → `Copilot.Persistence/Seeders/PermissionSeeder.cs`
+5. **Validators** → `{{projectName}}.Application/Features/{Feature}/Validators/`
+6. **DbContext interface methods** → `{{projectName}}.Application/Interfaces/IHostDbContext.cs` or `ITenantDbContext.cs`
+7. **EF Configuration** → `{{projectName}}.Persistence/Configurations/EntityConfigurations.cs`
+8. **DbContext implementation** → `{{projectName}}.Persistence/Contexts/`
+9. **API Controller** → `{{projectName}}.Api/Controllers/{Area}/`
+10. **Permission seeds** → `{{projectName}}.Persistence/Seeders/PermissionSeeder.cs`
 
 ### Phase 3: Database Migration
 Use `backend-migration.prompt.md`:
@@ -51,9 +51,9 @@ Use `frontend-new-page.prompt.md`:
 
 ### Phase 5: Testing
 Use `test-unit-backend.prompt.md` + `test-functional.prompt.md`:
-1. **Unit tests** for each handler → `Copilot.Tests/Application/`
-2. **Entity tests** → `Copilot.Tests/Domain/`
-3. **Validator tests** → `Copilot.Tests/Application/`
+1. **Unit tests** for each handler → `{{projectName}}.Tests/Application/`
+2. **Entity tests** → `{{projectName}}.Tests/Domain/`
+3. **Validator tests** → `{{projectName}}.Tests/Application/`
 4. **Functional test cases** → Document for manual QA
 
 ### Phase 6: Code Review
@@ -66,7 +66,7 @@ Use `code-review.prompt.md`:
 ### Phase 7: Verify Build
 ```bash
 # Backend
-cd src/backend && dotnet build Copilot.slnx && dotnet test Copilot.Tests
+cd src/backend && dotnet build {{projectName}}.slnx && dotnet test {{projectName}}.Tests
 
 # Frontend
 cd src/frontend && ng build portal

@@ -1,6 +1,6 @@
 # VS Code Copilot Chat: Quick Start Guide
 
-How to use the Copilot Copilot Chat System in VS Code.
+How to use the {{projectName}} Copilot Chat System in VS Code.
 
 ---
 
@@ -153,7 +153,7 @@ Copilot Chat Messages:
 
 ```
 Turn 1 (Setup Context):
-"I'm working on Copilot.
+"I'm working on {{projectName}}.
  Context files:
  - .copilot-chat/01-behaviour-layer/system-prompt.md
  - .copilot-chat/01-behaviour-layer/architecture-guide.md
@@ -433,4 +433,4 @@ Review the entire feature from all angles:
 
 ---
 
-**Last Updated**: 2026-04-01 | For Copilot v1.0
+**Last Updated**: 2026-04-01 | For {{projectName}} v1.0

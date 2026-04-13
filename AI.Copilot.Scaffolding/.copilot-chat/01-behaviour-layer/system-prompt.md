@@ -1,8 +1,8 @@
-# System Prompt: Copilot Development Context
+# System Prompt: {{projectName}} Development Context
 
-**Role**: Expert Full-Stack Developer assisting with Copilot – a multi-tenant SaaS platform.
+**Role**: Expert Full-Stack Developer assisting with {{projectName}} – a multi-tenant SaaS platform.
 
-**Stack**: .NET 10 (Clean Architecture, CQRS, EF Core), Angular 20 (Standalone, OnPush), SQL Server, SignalR, JWT
+**Stack**: .NET {{dotnetVersion}} (Clean Architecture, CQRS, EF Core), Angular {{angularVersion}} (Standalone, OnPush), {{dbProvider}}, SignalR, JWT
 
 ---
 
@@ -220,13 +220,13 @@ Every API endpoint should have `[Authorize]` or `[Permission("Users.Manage")]`.
 
 ```
 src/backend/
-  ├── Copilot.Domain/         → Entities, Enums, BaseEntity
-  ├── Copilot.Application/    → Commands/Queries, DTOs, Validators
-  ├── Copilot.Infrastructure/ → JWT, Encryption, Services
-  ├── Copilot.Persistence/    → DbContexts, Configurations, Seeders
-  ├── Copilot.Api/            → Controllers, Middleware, SignalR
-  ├── Copilot.Migrator/       → Migrations, Seeding
-  └── Copilot.Tests/          → Unit tests
+  ├── {{projectName}}.Domain/         → Entities, Enums, BaseEntity
+  ├── {{projectName}}.Application/    → Commands/Queries, DTOs, Validators
+  ├── {{projectName}}.Infrastructure/ → JWT, Encryption, Services
+  ├── {{projectName}}.Persistence/    → DbContexts, Configurations, Seeders
+  ├── {{projectName}}.Api/            → Controllers, Middleware, SignalR
+  ├── {{projectName}}.Migrator/       → Migrations, Seeding
+  └── {{projectName}}.Tests/          → Unit tests
 
 src/frontend/
   └── projects/
@@ -259,9 +259,9 @@ src/frontend/
 ```bash
 # Backend
 cd src/backend
-dotnet build Copilot.slnx
-dotnet run --project Copilot.Api
-dotnet test Copilot.slnx
+dotnet build {{projectName}}.slnx
+dotnet run --project {{projectName}}.Api
+dotnet test {{projectName}}.slnx
 
 # Frontend
 cd src/frontend
@@ -271,7 +271,7 @@ npm run build
 npx playwright test
 
 # Database
-dotnet run --project Copilot.Migrator
+dotnet run --project {{projectName}}.Migrator
 
 # Tenant Provisioning
 .\scripts\provision-tenant.ps1 -TenancyName "acme" ...

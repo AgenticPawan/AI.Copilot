@@ -1,11 +1,11 @@
 ---
-mode: 'agent'
+agent: agent
 description: "Analyze feature requirements and produce implementation plans. Use when: breaking down new features, estimating effort, identifying affected layers, planning database changes, or creating task lists with dependencies."
 ---
 
 # Requirements Analysis & Implementation Plan
 
-Analyze a feature requirement and produce a structured implementation plan for Copilot.
+Analyze a feature requirement and produce a structured implementation plan for {{projectName}}.
 
 ## Input Required
 - **Requirement**: Description of what needs to be built or changed

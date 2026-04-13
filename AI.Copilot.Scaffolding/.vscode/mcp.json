@@ -42,7 +42,7 @@
             "args": [
                 "run",
                 "--project",
-                "src/mcp-servers/DotnetMcpServer/DotnetMcpServer.csproj"
+                ".github/mcp-servers/DotnetMcpServer/DotnetMcpServer.csproj"
             ]
         }
     }

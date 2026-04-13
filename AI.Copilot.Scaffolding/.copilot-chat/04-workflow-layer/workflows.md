@@ -60,8 +60,8 @@ Persona: QA Engineer
 
 **Step 5: Create Domain Entity**
 ```bash
-cd src/backend/Copilot.Domain/Entities
-# File: src/backend/Copilot.Domain/Entities/Feature.cs
+cd src/backend/{{projectName}}.Domain/Entities
+# File: src/backend/{{projectName}}.Domain/Entities/Feature.cs
 
 ☐ Define entity with private constructor
 ☐ Add factory Create() method
@@ -71,7 +71,7 @@ cd src/backend/Copilot.Domain/Entities
 
 **Step 6: Create Application Layer (CQRS)**
 ```bash
-cd src/backend/Copilot.Application
+cd src/backend/{{projectName}}.Application
 
 ☐ Create DTOs (Request + Response)
 ☐ Create Command/Query definitions
@@ -84,7 +84,7 @@ Use: backend-feature.md → Step 2-3
 
 **Step 7: Create Persistence Layer**
 ```bash
-cd src/backend/Copilot.Persistence
+cd src/backend/{{projectName}}.Persistence
 
 ☐ Create IRepository interface
 ☐ Implement Repository class
@@ -97,7 +97,7 @@ Use: architecture-guide.md → Persistence section
 
 **Step 8: Create API Endpoints**
 ```bash
-cd src/backend/Copilot.Api/Controllers
+cd src/backend/{{projectName}}.Api/Controllers
 
 ☐ Create Controller class
 ☐ Add GET/POST/PUT/DELETE endpoints
@@ -111,7 +111,7 @@ Persona: Backend Architect + Security Specialist
 
 **Step 9: Backend Unit Tests**
 ```bash
-cd src/backend/Copilot.Tests
+cd src/backend/{{projectName}}.Tests
 
 ☐ Test Command handler (happy path + errors)
 ☐ Test Repository methods
@@ -121,7 +121,7 @@ cd src/backend/Copilot.Tests
 
 Use: unit-testing.md
 Persona: QA Engineer
-Command: dotnet test Copilot.slnx
+Command: dotnet test {{projectName}}.slnx
 ```
 
 ### Phase 3: Frontend Implementation
@@ -250,7 +250,7 @@ Persona: Debugging Expert
 **Step 3: Check Logs**
 ```bash
 # Backend logs
-tail -f logs/Copilot-*.txt
+tail -f logs/{{projectName}}-*.txt
 
 # Browser console
 F12 → Console tab
@@ -334,7 +334,7 @@ npm test -- bug-name.spec.ts
 **Step 10: Regression Testing**
 ```bash
 # Run full test suite
-dotnet test Copilot.slnx
+dotnet test {{projectName}}.slnx
 npm test
 
 ☐ No new test failures?
@@ -673,4 +673,4 @@ npm test
 
 ---
 
-**Last Updated**: 2026-04-01 | For Copilot v1.0
+**Last Updated**: 2026-04-01 | For {{projectName}} v1.0

@@ -1,11 +1,11 @@
 ---
-mode: 'agent'
+agent: agent
 description: "Systematic bug diagnosis and resolution. Use when: debugging errors, unexpected behavior, or crashes in backend, frontend, or database layers. Follows structured investigation through middleware → handler → DbContext pipeline."
 ---
 
 # Bug Fix: Diagnose & Resolve
 
-Systematic approach to finding and fixing bugs in Copilot.
+Systematic approach to finding and fixing bugs in {{projectName}}.
 
 ## Input Required
 - **Symptom**: What is happening? (error message, unexpected behavior, crash)

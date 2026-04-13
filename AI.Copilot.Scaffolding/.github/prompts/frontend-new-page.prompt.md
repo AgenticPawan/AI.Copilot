@@ -1,11 +1,11 @@
 ---
-mode: 'agent'
+agent: agent
 description: "Create a new Angular page with full CRUD operations. Use when: building a new feature page with data table, search, pagination, create/edit/delete modals, CSV export/import, permission-gated UI, and API integration."
 ---
 
 # Frontend Feature: New Page with CRUD
 
-Create a new Angular page in the Copilot portal with full CRUD operations.
+Create a new Angular page in the {{projectName}} portal with full CRUD operations.
 
 ## Input Required
 - **Feature Name**: (e.g., `invoices`)

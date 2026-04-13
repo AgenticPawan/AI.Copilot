@@ -1,9 +1,9 @@
 ---
 applyTo: "**/Tenancy/**,**/TenantDb*,**/HostDb*,**/TenantProvider*,**/TenantResolution*"
-description: "Multi-tenancy safety rules for Copilot. Applies to tenant-related files. Enforces database-per-tenant isolation, encrypted connection strings, query filters, and cross-tenant access prevention."
+description: "Multi-tenancy safety rules for {{projectName}}. Applies to tenant-related files. Enforces database-per-tenant isolation, encrypted connection strings, query filters, and cross-tenant access prevention."
 ---
 
-# Multi-Tenancy Safety — Copilot
+# Multi-Tenancy Safety — {{projectName}}
 
 ## Architecture
 - **DNS-based resolution**: Subdomain extracted by `TenantProvider` (checks X-Forwarded-Host, Host, Origin headers)

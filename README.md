@@ -12,7 +12,8 @@ When used, it creates a modular folder and file structure designed for enterpris
 - **Instant scaffolding** — creates all directories and files with rich content in one command
 - **Framework‑agnostic** — works in .NET, Angular, Node.js, or any project type
 - **Empty folder support** — scaffold into a brand new directory
-- **Rich template content** — full Copilot workspace layers with agents, instructions, prompts, and skills
+- **Rich template content** — full Copilot workspace layers with agents, instructions, prompts, skills, and bundled MCP server
+- **Dynamic variables** — customize project name, framework versions, and database provider at scaffold time
 - **Non‑destructive** — use `--force` only when you want to overwrite existing files
 - **CI/CD enforcement** — GitHub Action workflow ensures compliance
 
@@ -71,6 +72,14 @@ When used, it creates a modular folder and file structure designed for enterpris
     workflow-tenant-provisioning.prompt.md
   skills/
     backend-architect/SKILL.md
+    frontend-engineer/SKILL.md
+    fullstack-architect/SKILL.md
+    devops-engineer/SKILL.md
+    qa-engineer/SKILL.md
+  mcp-servers/
+    DotnetMcpServer/
+      Program.cs
+      DotnetMcpServer.csproj
   workflows/
     scaffold-check.yml
     COPILOT_QUICK_START.md
@@ -90,8 +99,14 @@ When used, it creates a modular folder and file structure designed for enterpris
 ### Step 1: Install the template (one-time)
 
 ```bash
-dotnet new install AI.Copilot.Scaffolding
+dotnet new install AI.Copilot.Scaffolding::2.0.1
 ```
+
+### Upgrade from a previous version
+```bash
+dotnet new install AI.Copilot.Scaffolding::2.0.1
+```
+This will automatically replace any older installed version.
 
 ### Step 2: Scaffold into your project
 
@@ -99,6 +114,11 @@ dotnet new install AI.Copilot.Scaffolding
 ```bash
 cd your-dotnet-project
 dotnet new copilot-scaffold
+```
+
+#### With custom project name and versions
+```bash
+dotnet new copilot-scaffold --projectName MyApp --dotnetVersion 9 --angularVersion 19 --dbProvider PostgreSQL
 ```
 
 #### Into an existing Angular project
@@ -130,7 +150,30 @@ dotnet new uninstall AI.Copilot.Scaffolding
 - The package is a **`dotnet new` template** (not a build-time NuGet dependency)
 - Running `dotnet new copilot-scaffold` **physically copies** all template files with rich content into the current directory
 - Files include full documentation, agent definitions, instruction sets, prompts, skills, and VS Code configuration
+- Dynamic variables (`{{projectName}}`, `{{dotnetVersion}}`, etc.) are replaced at scaffold time
 - No MSBuild, no build step — works anywhere the .NET SDK is available
+
+---
+
+## 🛠️ Dynamic Variables
+
+Customize the scaffold at creation time using template parameters:
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `--projectName` | `Copilot` | Project name used in namespaces, paths, and documentation |
+| `--angularVersion` | `20` | Angular framework version |
+| `--dotnetVersion` | `10` | .NET framework version |
+| `--csharpVersion` | `13` | C# language version |
+| `--dbProvider` | `SQL Server` | Database provider for persistence layer |
+| `--projectType` | `fullstack` | Project type: `fullstack`, `backend`, or `frontend` |
+
+**Example:**
+```bash
+dotnet new copilot-scaffold --projectName Acme --dotnetVersion 9 --angularVersion 19 --csharpVersion 12 --dbProvider PostgreSQL
+```
+
+All generated files will use your specified values instead of defaults.
 
 ---
 
@@ -174,9 +217,13 @@ The scaffold includes `.github/workflows/scaffold-check.yml` which validates tha
 ---
 
 ## 📌 Versioning
+
+**Current version: `2.0.1`**
+
 - Semantic versioning (`1.0.0`, `1.1.0`, etc.)
 - Breaking changes increment **major version**
 - New scaffold files increment **minor version**
+- Bug fixes and updates increment **patch version**
 
 ---
 

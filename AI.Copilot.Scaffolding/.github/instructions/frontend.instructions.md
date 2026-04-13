@@ -1,9 +1,9 @@
 ---
 applyTo: "**/*.{ts,html,scss}"
-description: "Angular 20 frontend coding standards for Copilot. Applies automatically to TypeScript, HTML, and SCSS files. Enforces standalone components, OnPush, signals, inject(), @libs/* imports, and UI conventions."
+description: "Angular {{angularVersion}} frontend coding standards for {{projectName}}. Applies automatically to TypeScript, HTML, and SCSS files. Enforces standalone components, OnPush, signals, inject(), @libs/* imports, and UI conventions."
 ---
 
-# Angular Frontend Standards — Copilot
+# Angular Frontend Standards — {{projectName}}
 
 ## Component Rules (MANDATORY)
 - `standalone: true` — ALWAYS, no NgModules

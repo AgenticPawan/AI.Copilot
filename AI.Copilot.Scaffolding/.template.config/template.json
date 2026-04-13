@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json.schemastore.org/template",
+    "$schema": "https://json.schemastore.org/template",
     "author": "Pawan Rahate",
     "classifications": [
         "AI",
@@ -50,6 +50,41 @@
             ],
             "defaultValue": "fullstack",
             "description": "The type of project to scaffold for. Determines which agents, instructions, and prompts are included."
+        },
+        "projectName": {
+            "type": "parameter",
+            "datatype": "string",
+            "defaultValue": "Copilot",
+            "replaces": "{{projectName}}",
+            "description": "The project name used throughout generated files (e.g., solution name, namespace prefix, UI title)."
+        },
+        "angularVersion": {
+            "type": "parameter",
+            "datatype": "string",
+            "defaultValue": "20",
+            "replaces": "{{angularVersion}}",
+            "description": "Angular major version for frontend code patterns and documentation."
+        },
+        "dotnetVersion": {
+            "type": "parameter",
+            "datatype": "string",
+            "defaultValue": "10",
+            "replaces": "{{dotnetVersion}}",
+            "description": ".NET major version for backend code patterns and documentation."
+        },
+        "csharpVersion": {
+            "type": "parameter",
+            "datatype": "string",
+            "defaultValue": "13",
+            "replaces": "{{csharpVersion}}",
+            "description": "C# language version for coding standards."
+        },
+        "dbProvider": {
+            "type": "parameter",
+            "datatype": "string",
+            "defaultValue": "SQL Server",
+            "replaces": "{{dbProvider}}",
+            "description": "Database provider for the persistence layer."
         }
     },
     "postActions": [

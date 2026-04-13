@@ -1,15 +1,15 @@
-# Copilot - GitHub Copilot Instructions
+# {{projectName}} - GitHub Copilot Instructions
 
 ## Project Identity
 
-Multi-tenant SaaS platform called **Copilot**. DNS-based tenant isolation with database-per-tenant strategy.
+Multi-tenant SaaS platform called **{{projectName}}**. DNS-based tenant isolation with database-per-tenant strategy.
 
 ## Tech Stack
 
 | Layer | Technology |
-|-------|-----------|
-| Backend | .NET 10, C# 13, Clean Architecture, CQRS (MediatR 12), EF Core 10 (SQL Server), FluentValidation |
-| Frontend | Angular 20, Standalone components, Signals, OnPush change detection, SCSS |
+|-------|------------|
+| Backend | .NET {{dotnetVersion}}, C# {{csharpVersion}}, Clean Architecture, CQRS (MediatR 12), EF Core {{dotnetVersion}} ({{dbProvider}}), FluentValidation |
+| Frontend | Angular {{angularVersion}}, Standalone components, Signals, OnPush change detection, SCSS |
 | Auth | JWT + Refresh tokens (BCrypt 12 work factor), Permission-based authorization (28 policies) |
 | Real-time | SignalR (3 hubs: host-notifications, tenant-notifications, transaction-stream) |
 | Testing | xUnit + Moq + FluentAssertions (backend), Playwright (E2E) |
@@ -19,13 +19,13 @@ Multi-tenant SaaS platform called **Copilot**. DNS-based tenant isolation with d
 
 ```
 src/backend/
-  Copilot.Domain/           -- Entities, Enums, Common (BaseEntity, IAuditableEntity, ISoftDelete)
-  Copilot.Application/      -- Features/{Area}/Commands|Queries|Validators, DTOs, Interfaces, Common (Result<T>)
-  Copilot.Infrastructure/   -- Security (JWT, AES, BCrypt), Tenancy, Services, EmailTemplates
-  Copilot.Persistence/      -- Contexts (HostDbContext, TenantDbContext), Configurations, Seeders, Migrations
-  Copilot.Api/              -- Controllers/{Auth|Admin|Shared|TenantModules}, Middleware, Hubs, Authorization
-  Copilot.Migrator/         -- Console app for migrations & seeding
-  Copilot.Tests/            -- xUnit tests (Domain/, Application/)
+  {{projectName}}.Domain/           -- Entities, Enums, Common (BaseEntity, IAuditableEntity, ISoftDelete)
+  {{projectName}}.Application/      -- Features/{Area}/Commands|Queries|Validators, DTOs, Interfaces, Common (Result<T>)
+  {{projectName}}.Infrastructure/   -- Security (JWT, AES, BCrypt), Tenancy, Services, EmailTemplates
+  {{projectName}}.Persistence/      -- Contexts (HostDbContext, TenantDbContext), Configurations, Seeders, Migrations
+  {{projectName}}.Api/              -- Controllers/{Auth|Admin|Shared|TenantModules}, Middleware, Hubs, Authorization
+  {{projectName}}.Migrator/         -- Console app for migrations & seeding
+  {{projectName}}.Tests/            -- xUnit tests (Domain/, Application/)
 
 src/frontend/
   projects/portal/                -- Single SPA (host/tenant detection via subdomain)

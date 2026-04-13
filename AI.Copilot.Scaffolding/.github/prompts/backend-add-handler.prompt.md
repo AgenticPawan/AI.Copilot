@@ -1,11 +1,11 @@
 ---
-mode: 'agent'
+agent: agent
 description: "Add a new MediatR command or query handler to an existing feature. Use when: adding operations like Archive, Export, MarkAsPaid, GetByFilter to an already-existing entity. Generates handler, validator, DbContext method, and API endpoint."
 ---
 
 # Backend: Add Command or Query Handler
 
-Add a new MediatR command or query to an existing feature area in Copilot.
+Add a new MediatR command or query to an existing feature area in {{projectName}}.
 
 ## Input Required
 - **Entity**: Which existing entity (e.g., `User`, `Tenant`, `Document`)
@@ -23,7 +23,7 @@ public record {OperationName}{Command|Query}({Params}) : IRequest<Result<{Return
 ```
 
 ### 2. Create the Handler
-Create `src/backend/Copilot.Application/Features/{Area}/{Commands|Queries}/{OperationName}Handler.cs`:
+Create `src/backend/{{projectName}}.Application/Features/{Area}/{Commands|Queries}/{OperationName}Handler.cs`:
 - Follow existing handler patterns in that feature area
 - Use `IUserAccountDbContextResolver.Resolve()` for user-scoped operations
 - Use `IHostDbContext` directly for host-only operations

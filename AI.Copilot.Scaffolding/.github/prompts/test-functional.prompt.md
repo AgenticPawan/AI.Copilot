@@ -1,11 +1,11 @@
 ---
-mode: 'agent'
+agent: agent
 description: "Generate structured functional test cases from requirements. Use when: creating QA test plans, defining acceptance criteria, documenting test scenarios for CRUD, auth, multi-tenancy, validation, and edge cases."
 ---
 
 # Functional Testing: Test Case Generation
 
-Generate structured functional test cases for Copilot features.
+Generate structured functional test cases for {{projectName}} features.
 
 ## Input Required
 - **Feature**: Feature name and description

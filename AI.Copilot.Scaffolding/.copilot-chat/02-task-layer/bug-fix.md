@@ -34,7 +34,7 @@ Who is affected?
 ```bash
 # Serilog outputs to:
 # - Console (development)
-# - File: logs/Copilot-*.txt
+# - File: logs/{{projectName}}-*.txt
 # - Seq: http://localhost:5341 (if running)
 
 # Look for:
@@ -363,4 +363,4 @@ this.service.getData().subscribe({
 
 ---
 
-**Last Updated**: 2026-04-01 | For Copilot v1.0
+**Last Updated**: 2026-04-01 | For {{projectName}} v1.0

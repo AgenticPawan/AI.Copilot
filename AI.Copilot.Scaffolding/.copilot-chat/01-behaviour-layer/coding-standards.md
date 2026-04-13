@@ -1,6 +1,6 @@
-# Coding Standards: Copilot Code Quality Guide
+# Coding Standards: {{projectName}} Code Quality Guide
 
-## 📝 Backend (.NET 10) Standards
+## 📝 Backend (.NET {{dotnetVersion}}) Standards
 
 ### Naming Conventions
 
@@ -596,4 +596,4 @@ describe('UserListComponent', () => {
 
 ---
 
-**Last Updated**: 2026-04-01 | For Copilot v1.0
+**Last Updated**: 2026-04-01 | For {{projectName}} v1.0

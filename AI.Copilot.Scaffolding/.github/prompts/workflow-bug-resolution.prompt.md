@@ -1,11 +1,11 @@
 ---
-mode: 'agent'
+agent: agent
 description: "Complete bug resolution lifecycle. Use when: handling bugs from triage through root cause analysis, fix implementation, regression testing, and verification. Ensures multi-tenant safety of fixes."
 ---
 
 # Workflow: Bug Resolution Pipeline
 
-Complete bug lifecycle from triage to verified fix.
+Complete bug lifecycle from triage to verified fix for {{projectName}}.
 
 ## Input Required
 - **Bug Report**: What's wrong, error messages, affected scope
@@ -43,7 +43,7 @@ Use `test-unit-backend.prompt.md`:
 ### Phase 5: Verify
 ```bash
 # Run all backend tests
-cd src/backend && dotnet test Copilot.Tests
+cd src/backend && dotnet test {{projectName}}.Tests
 
 # Build frontend if changed
 cd src/frontend && ng build portal

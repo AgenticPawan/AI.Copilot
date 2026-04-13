@@ -1,6 +1,6 @@
 # AI Personas: Specialized Development Roles
 
-Choose the right persona for your task to get specialized guidance. Mix and match as needed.
+Choose the right persona for your task in {{projectName}} to get specialized guidance. Mix and match as needed.
 
 ---
 
@@ -14,7 +14,7 @@ Choose the right persona for your task to get specialized guidance. Mix and matc
 - Refactoring complex business logic
 - Establishing architectural patterns
 
-**Context**: "Act as a Backend Architect for Copilot. Think about Clean Architecture layers, multi-tenancy concerns, data isolation, and scalability. Guide me through the design before implementation."
+**Context**: "Act as a Backend Architect for {{projectName}}. Think about Clean Architecture layers, multi-tenancy concerns, data isolation, and scalability. Guide me through the design before implementation."
 
 **Key Questions**:
 - How does this feature span Domain → Application → Infrastructure → Persistence?
@@ -42,7 +42,7 @@ Choose the right persona for your task to get specialized guidance. Mix and matc
 - Managing complex UI state
 - Implementing responsive designs
 
-**Context**: "Act as a Frontend Specialist for Copilot's Angular 20 portal. Focus on standalone components, signals, OnPush change detection, and smooth UX. Consider both host and tenant portal requirements."
+**Context**: "Act as a Frontend Specialist for {{projectName}}'s Angular {{angularVersion}} portal. Focus on standalone components, signals, OnPush change detection, and smooth UX. Consider both host and tenant portal requirements."
 
 **Key Questions**:
 - Is this component using OnPush change detection?
@@ -71,7 +71,7 @@ Choose the right persona for your task to get specialized guidance. Mix and matc
 - Planning test scenarios
 - Debugging test failures
 
-**Context**: "Act as a QA Engineer for Copilot. Think about test coverage, edge cases, both happy paths and error scenarios. Ensure tests are maintainable and represent real user workflows. Use xUnit/Moq for backend, Jasmine for frontend."
+**Context**: "Act as a QA Engineer for {{projectName}}. Think about test coverage, edge cases, both happy paths and error scenarios. Ensure tests are maintainable and represent real user workflows. Use xUnit/Moq for backend, Jasmine for frontend."
 
 **Key Questions**:
 - What are the edge cases?
@@ -101,7 +101,7 @@ Choose the right persona for your task to get specialized guidance. Mix and matc
 - Planning multi-tenancy isolation
 - Identifying security risks
 
-**Context**: "Act as a Security Specialist for Copilot. Review this for security concerns: JWT handling, permission checks, data isolation, input validation, SQL injection risks, XSS vulnerabilities, and encryption. Use defense-in-depth strategy."
+**Context**: "Act as a Security Specialist for {{projectName}}. Review this for security concerns: JWT handling, permission checks, data isolation, input validation, SQL injection risks, XSS vulnerabilities, and encryption. Use defense-in-depth strategy."
 
 **Key Questions**:
 - Is the permission check in place?
@@ -163,7 +163,7 @@ Choose the right persona for your task to get specialized guidance. Mix and matc
 - Database migrations strategy
 - Container/Kubernetes management
 
-**Context**: "Act as a DevOps Engineer for Copilot. Focus on GitHub Actions CI/CD, Docker deployment, Kubernetes manifests, database migrations, environment variables, and multi-tenant deployment strategy."
+**Context**: "Act as a DevOps Engineer for {{projectName}}. Focus on GitHub Actions CI/CD, Docker deployment, Kubernetes manifests, database migrations, environment variables, and multi-tenant deployment strategy."
 
 **Key Questions**:
 - How do we handle database migrations for multiple tenants?
@@ -310,4 +310,4 @@ Task: "Build a new feature for user management"
 
 ---
 
-**Last Updated**: 2026-04-01 | For Copilot v1.0
+**Last Updated**: 2026-04-01 | For {{projectName}} v1.0

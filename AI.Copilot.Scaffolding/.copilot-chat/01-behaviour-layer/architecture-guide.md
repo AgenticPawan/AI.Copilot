@@ -1,9 +1,9 @@
-# Architecture Guide: Copilot Design Patterns
+# Architecture Guide: {{projectName}} Design Patterns
 
 ## 🏗️ Clean Architecture Layers
 
 ### Layer 1: Domain (Core Business Logic)
-**Location**: `src/backend/Copilot.Domain/`
+**Location**: `src/backend/{{projectName}}.Domain/`
 
 **Responsibilities**:
 - Define entities with business rules
@@ -15,9 +15,9 @@
 
 **Entity with Factory Pattern**:
 ```csharp
-using Copilot.Domain.Common;
+using {{projectName}}.Domain.Common;
 
-namespace Copilot.Domain.Entities;
+namespace {{projectName}}.Domain.Entities;
 
 public class User : BaseEntity
 {
@@ -59,7 +59,7 @@ public class User : BaseEntity
 ---
 
 ### Layer 2: Application (Use Cases / Business Operations)
-**Location**: `src/backend/Copilot.Application/`
+**Location**: `src/backend/{{projectName}}.Application/`
 
 **Responsibilities**:
 - Orchestrate business logic (Commands/Queries)
@@ -169,7 +169,7 @@ public class UserDto
 ---
 
 ### Layer 3: Infrastructure (External Services)
-**Location**: `src/backend/Copilot.Infrastructure/`
+**Location**: `src/backend/{{projectName}}.Infrastructure/`
 
 **Responsibilities**:
 - JWT token generation/validation
@@ -228,7 +228,7 @@ public interface IPermissionService
 ---
 
 ### Layer 4: Persistence (Data Access)
-**Location**: `src/backend/Copilot.Persistence/`
+**Location**: `src/backend/{{projectName}}.Persistence/`
 
 **Responsibilities**:
 - EF Core DbContext configuration
@@ -332,7 +332,7 @@ public class UserRepository : IUserRepository
 ---
 
 ### Layer 5: API (Controllers / Endpoints)
-**Location**: `src/backend/Copilot.Api/`
+**Location**: `src/backend/{{projectName}}.Api/`
 
 **Responsibilities**:
 - HTTP endpoints (REST)
@@ -415,7 +415,7 @@ public class ApiError
 ---
 
 ### Middleware (Cross-Cutting Concerns)
-**Location**: `src/backend/Copilot.Api/Middleware/`
+**Location**: `src/backend/{{projectName}}.Api/Middleware/`
 
 **Exception Handling Middleware**:
 - Catches all exceptions
@@ -436,7 +436,7 @@ public class ApiError
 ## 🔄 Multi-Tenancy Flow
 
 ```
-Browser Request (acme.Copilot.com)
+Browser Request (acme.{{projectName}}.com)
          ↓
 TenantResolutionMiddleware
          ↓↓
@@ -647,4 +647,4 @@ SQL Server
 
 ---
 
-**Last Updated**: 2026-04-01 | For Copilot v1.0
+**Last Updated**: 2026-04-01 | For {{projectName}} v1.0

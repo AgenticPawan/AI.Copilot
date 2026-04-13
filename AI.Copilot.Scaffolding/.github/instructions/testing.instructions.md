@@ -1,9 +1,9 @@
 ---
-applyTo: "**/Copilot.Tests/**"
-description: "Testing standards for Copilot. Applies to test files. Enforces xUnit + Moq + FluentAssertions patterns, required test scenarios, and naming conventions."
+applyTo: "**/{{projectName}}.Tests/**"
+description: "Testing standards for {{projectName}}. Applies to test files. Enforces xUnit + Moq + FluentAssertions patterns, required test scenarios, and naming conventions."
 ---
 
-# Testing Standards — Copilot
+# Testing Standards — {{projectName}}
 
 ## Backend Unit Tests (xUnit + Moq + FluentAssertions)
 
@@ -69,7 +69,7 @@ _accountDb.Verify(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.
 
 ## Test File Locations
 ```
-Copilot.Tests/Domain/        → Entity behavior tests
-Copilot.Tests/Application/   → Handler and validator tests
-Copilot.Tests/Infrastructure/ → Service tests
+{{projectName}}.Tests/Domain/        → Entity behavior tests
+{{projectName}}.Tests/Application/   → Handler and validator tests
+{{projectName}}.Tests/Infrastructure/ → Service tests
 ```

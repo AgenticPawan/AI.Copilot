@@ -1,11 +1,11 @@
 ---
-mode: 'agent'
+agent: agent
 description: "Write Playwright end-to-end tests for Angular features. Use when: testing user flows, CRUD operations, permission enforcement, or cross-tenant isolation in the browser. Uses data-testid selectors."
 ---
 
 # E2E Testing: Frontend (Playwright)
 
-Write Playwright end-to-end tests for Copilot portal features.
+Write Playwright end-to-end tests for {{projectName}} portal features.
 
 ## Input Required
 - **Feature**: Which page/flow to test (e.g., `login`, `tenant-management`, `document-upload`)

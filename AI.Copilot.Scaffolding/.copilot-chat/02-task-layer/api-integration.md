@@ -322,7 +322,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Copilot API",
+        Title = "{{projectName}} API",
         Version = "v1",
         Description = "Multi-tenant SaaS API",
         Contact = new OpenApiContact { Name = "Support" }
@@ -516,4 +516,4 @@ public class DocumentsControllerTests : IAsyncLifetime
 
 ---
 
-**Last Updated**: 2026-04-01 | For Copilot v1.0
+**Last Updated**: 2026-04-01 | For {{projectName}} v1.0

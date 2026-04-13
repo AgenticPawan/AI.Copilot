@@ -1,11 +1,11 @@
 ---
-mode: 'agent'
+agent: agent
 description: "Comprehensive code review for quality, security, and compliance. Use when: reviewing PRs, checking architecture compliance, verifying multi-tenancy safety, or auditing security before deployment."
 ---
 
 # Code Review: Quality & Security Check
 
-Review Copilot code changes for compliance with project patterns, security, and multi-tenancy safety.
+Review {{projectName}} code changes for compliance with project patterns, security, and multi-tenancy safety.
 
 ## Input Required
 - **Files to Review**: File paths or git diff

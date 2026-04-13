@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageId>AI.Copilot.Scaffolding</PackageId>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <Authors>Pawan Rahate</Authors>
     <Company>AI.Copilot</Company>
     <Description>Production-ready scaffold for Copilot workspace layers. Creates .copilot-chat,

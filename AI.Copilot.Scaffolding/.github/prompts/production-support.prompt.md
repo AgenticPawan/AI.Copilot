@@ -1,11 +1,11 @@
 ---
-mode: 'agent'
+agent: agent
 description: "Production issue triage and resolution. Use when: investigating P1-P4 incidents, debugging tenant-specific failures, checking database connectivity, or diagnosing API/frontend errors in production."
 ---
 
 # Production Support: Issue Triage & Resolution
 
-Systematic production issue investigation for Copilot SaaS platform.
+Systematic production issue investigation for {{projectName}} SaaS platform.
 
 ## Input Required
 - **Severity**: `P1-Critical` (system down) | `P2-High` (major feature broken) | `P3-Medium` (degraded) | `P4-Low` (cosmetic)

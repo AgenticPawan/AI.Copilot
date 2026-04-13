@@ -9,6 +9,8 @@
         <MakeDir Directories="$(MSBuildProjectDirectory)\.github\agents" />
         <MakeDir Directories="$(MSBuildProjectDirectory)\.github\instructions" />
         <MakeDir Directories="$(MSBuildProjectDirectory)\.github\prompts" />
+        <MakeDir Directories="$(MSBuildProjectDirectory)\.github\skills" />
+        <MakeDir Directories="$(MSBuildProjectDirectory)\.github\mcp-servers\DotnetMcpServer" />
         <MakeDir Directories="$(MSBuildProjectDirectory)\.vscode" />
     </Target>
 

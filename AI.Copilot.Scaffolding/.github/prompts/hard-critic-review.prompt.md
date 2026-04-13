@@ -1,5 +1,5 @@
 ---
-mode: 'agent'
+agent: agent
 description: "Hard critic code review and technical audit. Use when: performing deep architecture review, identifying SOLID violations, auditing security and multi-tenancy, checking test coverage gaps, or generating a prioritized improvement roadmap with measurable acceptance criteria."
 ---
 

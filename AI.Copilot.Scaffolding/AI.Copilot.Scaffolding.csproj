@@ -2,24 +2,39 @@
 
   <PropertyGroup>
     <PackageId>AI.Copilot.Scaffolding</PackageId>
-    <Version>1.1.0</Version>
+    <Version>2.0.0</Version>
     <Authors>Pawan Rahate</Authors>
     <Company>AI.Copilot</Company>
-    <Description>Production-ready scaffold for Copilot workspace layers.</Description>
-    <PackageTags>copilot scaffolding ai workspace</PackageTags>
+    <Description>Production-ready scaffold for Copilot workspace layers. Creates .copilot-chat,
+      .github, and .vscode directories with rich template content. Works with .NET, Angular, or any
+      project type.</Description>
+    <PackageTags>copilot scaffolding ai workspace dotnet angular template</PackageTags>
     <RepositoryUrl>https://github.com/AgenticPawan/AI.Copilot</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
+  <!-- Template package configuration -->
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <PackageType>Template</PackageType>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include=".copilot-chat\**\*.*" Pack="true" PackagePath="contentFiles\any\any\.copilot-chat" />
-    <Content Include=".github\**\*.*" Pack="true" PackagePath="contentFiles\any\any\.github" />
-    <Content Include=".vscode\**\*.*" Pack="true" PackagePath="contentFiles\any\any\.vscode" />
+    <Content Include=".template.config\**\*" />
+    <Content Include=".copilot-chat\**\*" />
+    <Content Include=".github\**\*" />
+    <Content Include=".vscode\**\*" />
+    <Compile Remove="**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

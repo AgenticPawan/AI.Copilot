@@ -17,13 +17,10 @@ jobs:
       - name: Install .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '10.0.x'
 
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Install scaffold NuGet package
-        run: dotnet add package AI.Copilot.Scaffolding --version 1.1.0
+      - name: Install scaffold template
+        run: dotnet new install AI.Copilot.Scaffolding --version 2.0.0
 
       - name: Verify scaffold structure
         run: |

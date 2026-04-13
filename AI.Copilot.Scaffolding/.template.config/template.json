@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Pawan Rahate",
+    "classifications": [
+        "AI",
+        "Copilot",
+        "Scaffolding",
+        "Workspace"
+    ],
+    "identity": "AI.Copilot.Scaffolding",
+    "name": "AI Copilot Workspace Scaffold",
+    "shortName": "copilot-scaffold",
+    "description": "Production-ready scaffold for Copilot workspace layers. Creates .copilot-chat, .github, and .vscode directories with rich template content. Works with .NET, Angular, or any project type.",
+    "tags": {
+        "type": "item"
+    },
+    "preferNameDirectory": false,
+    "sources": [
+        {
+            "source": "./",
+            "target": "./",
+            "exclude": [
+                ".template.config/**",
+                "AI.Copilot.Scaffolding.csproj",
+                "bin/**",
+                "obj/**",
+                "build/**",
+                "*.nupkg",
+                "*.user"
+            ]
+        }
+    ],
+    "symbols": {
+        "projectType": {
+            "type": "parameter",
+            "datatype": "choice",
+            "choices": [
+                {
+                    "choice": "fullstack",
+                    "description": "Full-stack scaffolding — all Copilot layers, agents, instructions, prompts, and VS Code config"
+                },
+                {
+                    "choice": "dotnet",
+                    "description": ".NET backend scaffolding — backend agents, instructions, prompts, and VS Code config"
+                },
+                {
+                    "choice": "angular",
+                    "description": "Angular frontend scaffolding — frontend agents, instructions, prompts, and VS Code config"
+                }
+            ],
+            "defaultValue": "fullstack",
+            "description": "The type of project to scaffold for. Determines which agents, instructions, and prompts are included."
+        }
+    },
+    "postActions": [
+        {
+            "id": "post-scaffold-message",
+            "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+            "description": "AI Copilot scaffold created successfully! Open the .copilot-chat/04-workflow-layer/QUICK_START.md to get started.",
+            "manualInstructions": [
+                {
+                    "text": "Open .copilot-chat/04-workflow-layer/QUICK_START.md to get started with your AI Copilot workspace."
+                }
+            ],
+            "continueOnError": true
+        }
+    ]
+}

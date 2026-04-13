@@ -1,17 +1,20 @@
 # AI.Copilot.Scaffolding
 
 ## 📦 Overview
-`AI.Copilot.Scaffolding` is a NuGet package that **auto‑generates a standardized Copilot workspace scaffold**.  
-When installed, it creates a modular folder and file structure designed for enterprise‑grade AI development, ensuring every repository starts with a **production‑ready Copilot environment**.
+`AI.Copilot.Scaffolding` is a **dotnet new template package** that **scaffolds a standardized Copilot workspace** into any directory.  
+When used, it creates a modular folder and file structure designed for enterprise‑grade AI development, ensuring every repository starts with a **production‑ready Copilot environment**.
+
+**Works with:** .NET projects, Angular projects, or any empty folder — no build system required.
 
 ---
 
 ## 🚀 Features
-- **Auto‑generate directories** (`.copilot-chat`, `.github`, `.vscode`)
-- **Create default files with content** (Markdown, JSON configs)
-- **Non‑destructive**: existing files are preserved
-- **Validation**: MSBuild checks enforce required headers and fields
-- **CI/CD enforcement**: GitHub Action workflow ensures compliance
+- **Instant scaffolding** — creates all directories and files with rich content in one command
+- **Framework‑agnostic** — works in .NET, Angular, Node.js, or any project type
+- **Empty folder support** — scaffold into a brand new directory
+- **Rich template content** — full Copilot workspace layers with agents, instructions, prompts, and skills
+- **Non‑destructive** — use `--force` only when you want to overwrite existing files
+- **CI/CD enforcement** — GitHub Action workflow ensures compliance
 
 ---
 
@@ -20,6 +23,7 @@ When installed, it creates a modular folder and file structure designed for ente
 ```
 .copilot-chat/
   01-behaviour-layer/
+    architecture-guide.md
     coding-standards.md
     system-prompt.md
   02-task-layer/
@@ -50,17 +54,29 @@ When installed, it creates a modular folder and file structure designed for ente
     security.instructions.md
     testing.instructions.md
   prompts/
-
+    backend-add-handler.prompt.md
+    backend-migration.prompt.md
+    backend-new-feature.prompt.md
+    bug-fix.prompt.md
+    code-review.prompt.md
+    frontend-add-component.prompt.md
+    frontend-new-page.prompt.md
+    requirements-analysis.prompt.md
+    test-e2e-playwright.prompt.md
+    test-functional.prompt.md
+    test-unit-backend.prompt.md
+    workflow-bug-resolution.prompt.md
+    workflow-enhance-feature.prompt.md
+    workflow-fullstack-feature.prompt.md
+    workflow-tenant-provisioning.prompt.md
   skills/
     backend-architect/SKILL.md
-    devops-engineer/SKILL.md
-    frontend-engineer/SKILL.md
-    fullstack-architect/SKILL.md
-    qa-engineer/SKILL.md
   workflows/
-  
-  COPILOT_QUICK_START.md
+    scaffold-check.yml
+    COPILOT_QUICK_START.md
+
   copilot-instructions.md
+  COPILOT_QUICK_START.md
 
 .vscode/
   mcp.json
@@ -71,81 +87,89 @@ When installed, it creates a modular folder and file structure designed for ente
 
 ## 📥 Installation
 
-### Using .NET CLI
+### Step 1: Install the template (one-time)
+
 ```bash
-dotnet add package AI.Copilot.Scaffolding --version 1.1.0
+dotnet new install AI.Copilot.Scaffolding
 ```
 
-### Using Visual Studio / Rider
-- Open **NuGet Package Manager**
-- Search for `AI.Copilot.Scaffolding`
-- Install into your project
+### Step 2: Scaffold into your project
+
+#### Into an existing .NET project
+```bash
+cd your-dotnet-project
+dotnet new copilot-scaffold
+```
+
+#### Into an existing Angular project
+```bash
+cd your-angular-project
+dotnet new copilot-scaffold
+```
+
+#### Into an empty folder
+```bash
+mkdir my-new-project
+cd my-new-project
+dotnet new copilot-scaffold
+```
+
+### Overwrite existing files
+```bash
+dotnet new copilot-scaffold --force
+```
+
+### Uninstall the template
+```bash
+dotnet new uninstall AI.Copilot.Scaffolding
+```
 
 ---
 
 ## ⚙️ How It Works
-- Package ships with a `.targets` file:
-  - **Ensures directories exist**
-  - **Writes default content** into missing files
-  - **Validates file contents** (e.g., `coding-standards.md` must contain `## Coding Standards`)
-- Runs automatically during build, so your scaffold is always enforced.
+- The package is a **`dotnet new` template** (not a build-time NuGet dependency)
+- Running `dotnet new copilot-scaffold` **physically copies** all template files with rich content into the current directory
+- Files include full documentation, agent definitions, instruction sets, prompts, skills, and VS Code configuration
+- No MSBuild, no build step — works anywhere the .NET SDK is available
 
 ---
 
-## 📖 Example File Contents
+## 📖 Usage Examples
 
-- **coding-standards.md**
-  ```markdown
-  ## Coding Standards
-  Defines project-wide coding rules and conventions.
-  - Use PascalCase for classes
-  - Use camelCase for variables
-  - Always include XML documentation for public methods
-  ```
+### Scaffold into a new .NET Web API project
+```bash
+mkdir MyApi && cd MyApi
+dotnet new webapi
+dotnet new copilot-scaffold
+```
 
-- **system-prompt.md**
-  ```markdown
-  ## System Prompt
-  Defines Copilot system behavior and constraints.
-  ```
+### Scaffold into a new Angular project
+```bash
+ng new my-angular-app
+cd my-angular-app
+dotnet new copilot-scaffold
+```
 
-- **mcp.json**
-  ```json
-  {
-    "version": "1.0",
-    "description": "MCP workspace config"
-  }
-  ```
+### Scaffold into a blank workspace
+```bash
+mkdir my-workspace && cd my-workspace
+dotnet new copilot-scaffold
+code .
+```
 
 ---
 
 ## 🛡️ CI/CD Enforcement
-Add this workflow to `.github/workflows/scaffold-check.yml`:
-
-```yaml
-name: Scaffold Compliance Check
-on: [push, pull_request]
-jobs:
-  scaffold-check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.x'
-      - run: dotnet restore
-      - run: dotnet build --no-restore
-```
-
-This ensures every build validates scaffold presence and correctness.
+The scaffold includes `.github/workflows/scaffold-check.yml` which validates that all required scaffold files are present on every push and pull request.
 
 ---
 
 ## 🏆 Benefits
 - **Consistency**: Every repo starts with the same scaffold.
-- **Automation**: No manual setup required.
-- **Compliance**: Standards enforced at build and CI/CD.
-- **Portability**: Works in VS Code, Visual Studio, Rider, or any IDE supporting NuGet/MSBuild.
+- **Zero config**: One command creates everything — no build, no restore.
+- **Framework‑agnostic**: .NET, Angular, React, Node.js — any project type.
+- **Rich content**: Full Copilot workspace layers, not empty stubs.
+- **Portability**: Works in VS Code, Visual Studio, Rider, or any IDE.
 
 ---
 
